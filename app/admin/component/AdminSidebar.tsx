@@ -21,26 +21,27 @@ import {
     SidebarMenuButton,
     SidebarMenuItem, useSidebar,
 } from "@/components/ui/sidebar"
+import Link from "next/link";
 
 const items = [
     {
         title: "Dashboard",
-        url: "#",
+        url: "/admin",
         icon: PiChartPieSliceFill,
     },
     {
         title: "Courses",
-        url: "#",
+        url: "/admin/pages/courses",
         icon: BookOpen,
     },
     {
         title: "Subscription plans",
-        url: "#",
+        url: "/admin/pages/subscriptions",
         icon: PiNotebookDuotone,
     },
     {
         title: "Transactions",
-        url: "#",
+        url: "/admin/pages/transactions",
         icon: ArrowLeftRight,
     },
     {
@@ -92,10 +93,11 @@ const AdminSidebar = () => {
                             {items.map((item) => (
                                 <SidebarMenuItem key={item.title}>
                                     <SidebarMenuButton asChild className="pl-8 hover:bg-[#1C1C1C0D] rounded-lg py-5">
-                                        <a href={item.url} className="flex items-center">
-                                            <item.icon style={{ width: '16.25px', height: '16.25px', color: 'black' }} />
-                                            <span className="font-normal text-lg">{item.title}</span>
-                                        </a>
+                                        <Link href={item.url} passHref className="flex items-center">
+                                                <item.icon
+                                                    style={{width: '16.25px', height: '16.25px', color: 'black'}}/>
+                                                <span className="font-normal text-lg">{item.title}</span>
+                                        </Link>
                                     </SidebarMenuButton>
                                 </SidebarMenuItem>
                             ))}
@@ -106,7 +108,7 @@ const AdminSidebar = () => {
             <SidebarFooter className="py-4 px-8">
                 <div className="flex pl-10 items-center gap-2 cursor-pointer">
                     <Users style={{ width: '16.25px', height: '16.25px', color: 'black' }} />
-                    Logout
+                    <span className="text-[#D06B0D]">Logout</span>
                 </div>
 
             </SidebarFooter>

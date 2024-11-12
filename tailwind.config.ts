@@ -9,6 +9,12 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+	  	fontFamily: {
+		  	sans: ['var(--font-cabin)', 'sans-serif'],
+	  	},
+		// backgroundImage: {
+		//   	'custom-image': "url('/carImage.png')"
+		// },
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -68,6 +74,8 @@ const config: Config = {
   		}
   	}
   },
+	// eslint-disable-next-line @typescript-eslint/no-require-imports
   plugins: [require("tailwindcss-animate")],
 };
+
 export default config;
