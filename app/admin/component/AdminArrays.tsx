@@ -6,6 +6,7 @@ import {
     BeginnerContent,
     IntermediateContent
 } from "@/app/admin/component/CategoryContents";
+import {AllContent, PendingContent, SuccessfulContent} from "@/app/admin/(pages)/subscriptions/transactionsTabContent";
 
 interface AdminCarouselItem {
     title: string;
@@ -162,4 +163,85 @@ export const subscriptionPlans = [
         duration: 6,
         price: '3,550',
     }
+]
+
+export const subscriptionTabs = [
+    {
+        title: 'All',
+        color: '#F0EAE8',
+        content: <AllContent />
+    },
+    {
+        title: 'Successful',
+        color: '#F0EAE8',
+        content: <SuccessfulContent />
+    },
+    {
+        title: 'Pending',
+        color: '#F0EAE8',
+        content: <PendingContent />
+    },
+]
+
+
+const now = new Date();
+const formattedTime = new Intl.DateTimeFormat("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+}).format(now);
+
+const formattedDate = new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "2-digit",
+}).format(now);
+
+
+export const transactionLineUp = [
+    {
+        transactionReferences: "SGA.N4.78782108",
+        emailAdded: "michelle.rivera@example.com",
+        status: "successful",
+        date: formattedDate,
+        time: formattedTime,
+        transactionType: "12 month sub plan",
+        finalResult: "Done"
+    },
+    {
+        transactionReferences: "Approved: Adm Taiwo",
+        emailAdded: "abcd@example.com",
+        status: "successful",
+        date: formattedDate,
+        time: formattedTime,
+        transactionType: "12 month sub plan",
+        finalResult: "Received"
+    },
+    {
+        transactionReferences: "SGA.N4.78782108",
+        emailAdded: "efgh@example.com",
+        status: "pending",
+        date: formattedDate,
+        time: formattedTime,
+        transactionType: "Purchased Spicy Unit\n",
+        finalResult: "Pending"
+    },
+    {
+        transactionReferences: "Approved: Adm Segun",
+        emailAdded: "wxyz@example.com",
+        status: "successful",
+        date: formattedDate,
+        time: formattedTime,
+        transactionType: "12 month sub plan",
+        finalResult: "Received"
+    },
+    {
+        transactionReferences: "SGA.N4.78782108-2025",
+        emailAdded: "mnop@example.com",
+        status: "pending",
+        date: formattedDate,
+        time: formattedTime,
+        transactionType: "12 month sub plan",
+        finalResult: "Pending"
+    },
 ]
