@@ -31,17 +31,17 @@ const items = [
     },
     {
         title: "Courses",
-        url: "/admin/pages/courses",
+        url: "/admin/courses",
         icon: BookOpen,
     },
     {
         title: "Subscription plans",
-        url: "/admin/pages/subscriptions",
+        url: "/admin/subscriptions",
         icon: PiNotebookDuotone,
     },
     {
         title: "Transactions",
-        url: "/admin/pages/transactions",
+        url: "/admin/transactions",
         icon: ArrowLeftRight,
     },
     {

@@ -39,7 +39,7 @@ export function CoursesTabs({ courses }: CoursesTabsProps) {
                             value={course.title}
                             onClick={() => handleChange(index)}
                             className={`px-6 py-2 text-lg cursor-pointer flex gap-2 items-center whitespace-nowrap ${
-                                activeButton === index ? "border-[#A85334] bg-[#FDF4E9] border-b-2 text-[#A85334]" : ""
+                                activeButton === index ? "border-[#602712] bg-[#FDF4E9] border-b-2 text-[#602712]" : ""
                             }`}
                         >
                             <span>{course.title}</span>
