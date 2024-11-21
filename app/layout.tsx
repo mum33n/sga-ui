@@ -10,10 +10,8 @@ export const metadata: Metadata = {
 
 const cabin = Cabin({
   subsets: ['latin'],
-  display: 'swap',
-  // weight: ['400','500','600','700'],  // You can customize the font weights you need
-  variable: '--font-cabin',
-})
+  weight: ['400', '500', '600', '700'], // Specify the weights you need
+});
 
 export default function RootLayout({
   children,
