@@ -145,3 +145,21 @@ export const categoryCoursesBeginner: categoryCoursesItem[] = [
         image: '/music3.jpeg'
     },
 ]
+
+export const subscriptionPlans = [
+    {
+        discount: 10,
+        duration: 1,
+        price: '1,000',
+    },
+    {
+        discount: 20,
+        duration: 3,
+        price: '2,000',
+    },
+    {
+        discount: 30,
+        duration: 6,
+        price: '3,550',
+    }
+]
