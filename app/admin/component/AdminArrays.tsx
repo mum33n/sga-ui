@@ -6,7 +6,8 @@ import {
     BeginnerContent,
     IntermediateContent
 } from "@/app/admin/component/CategoryContents";
-import {AllContent, PendingContent, SuccessfulContent} from "@/app/admin/(pages)/subscriptions/transactionsTabContent";
+import {AllContent, PendingContent, SuccessfulContent} from "@/app/admin/(pages)/transactions/transactionsTabContent";
+import {Accepted, Pending} from "@/app/admin/(pages)/tutors/tutorsTabsContent";
 
 interface AdminCarouselItem {
     title: string;
@@ -243,5 +244,59 @@ export const transactionLineUp = [
         time: formattedTime,
         transactionType: "12 month sub plan",
         finalResult: "Pending"
+    },
+]
+
+export const tutorsList = [
+    {
+        name: "David Moore",
+        Telephone: "09087675643",
+        status: "accepted",
+    },
+    {
+        name: "Wilson Kristen",
+        Telephone: "07012394857",
+        status: "pending",
+    },
+    {
+        name: "John Snow",
+        Telephone: "08145632561",
+        status: "accepted",
+    },
+    {
+        name: "Little Finger",
+        Telephone: "08167355663",
+        status: "pending",
+    },
+    {
+        name: "Musok Artola",
+        Telephone: "07033448827",
+        status: "accepted",
+    },
+    {
+        name: "Billy Graham",
+        Telephone: "08198767654",
+        status: "accepted",
+    },
+]
+
+let AcceptedCount = 0
+let PendingCount = 0
+tutorsList.map(list => (
+    list.status === "accepted"
+        ? AcceptedCount++
+        : PendingCount++
+))
+
+export const tutorsTabs = [
+    {
+        title: 'Accepted',
+        count: AcceptedCount,
+        content: <Accepted />
+    },
+    {
+        title: 'Pending',
+        count: PendingCount,
+        content: <Pending />
     },
 ]

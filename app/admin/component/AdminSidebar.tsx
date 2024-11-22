@@ -46,7 +46,7 @@ const items = [
     },
     {
         title: "Tutors",
-        url: "#",
+        url: "/admin/tutors",
         icon: PiChalkboardTeacherLight,
     },
     {
