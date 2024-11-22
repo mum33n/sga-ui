@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+		backgroundImage: {
+			'custom-image': "url('/carImage.png')",
+		},
 	  	fontFamily: {
 		  	sans: ['var(--font-cabin)', 'sans-serif'],
 	  	},

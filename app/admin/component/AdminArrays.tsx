@@ -300,3 +300,75 @@ export const tutorsTabs = [
         content: <Pending />
     },
 ]
+
+export const studentCarousel = [
+    {
+        duration: 1,
+        count: 340,
+    },
+    {
+        duration: 3,
+        count: 600,
+    },
+    {
+        duration: 6,
+        count: 543,
+    }
+]
+
+export const studentCarouselContent = [
+    {
+        title: '1',
+        count: 600,
+        color: '#895543'
+    },
+    {
+        title: '3',
+        count: 670,
+        color: '#BA751B'
+    },
+    {
+        title: '6',
+        count: 700,
+        color: '#ba401b'
+    },
+]
+
+export const studentDashboardTable = [
+    {
+        name: "Musok Artola",
+        emailAddress: "michelle.rivera@example.com",
+        dateJoined: formattedDate,
+    },
+    {
+        name: "Little Finger",
+        emailAddress: "abcd@example.com",
+        dateJoined: formattedDate,
+    },
+    {
+        name: "John Snow",
+        emailAddress: "efgh@example.com",
+        dateJoined: formattedDate,
+    },
+    {
+        name: "Wilson Kristen",
+        emailAddress: "wxyz@example.com",
+        dateJoined: formattedDate,
+    },
+    {
+        name: "David Moore",
+        emailAddress: "mnop@example.com",
+        dateJoined: formattedDate,
+    },
+    {
+        name: "Billy Graham",
+        emailAddress: "abcd@example.com",
+        dateJoined: formattedDate,
+    },
+]
+
+
+
+
+
+
