@@ -5,6 +5,14 @@ import {Search} from "lucide-react";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import { studentDashboardTable } from "@/app/admin/component/AdminArrays";
 import Link from "next/link";
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger
+} from "@/components/ui/dialog";
 
 const Students = () => {
     return (
@@ -40,11 +48,38 @@ const Students = () => {
                     <TableBody>
                         {
                             studentDashboardTable.map((list, index) => (
-                                <TableRow key={index} className="whitespace-nowrap text-base font-normal text-[#4F4F4F]">
-                                    <TableCell className="font-medium">{list.name}</TableCell>
-                                    <TableCell className="font-medium">{list.emailAddress}</TableCell>
-                                    <TableCell className="font-medium">{list.dateJoined}</TableCell>
-                                </TableRow>
+                                <Dialog key={index}>
+                                    <DialogTrigger asChild>
+                                        <TableRow key={index} className="whitespace-nowrap text-base font-normal text-[#4F4F4F] cursor-pointer">
+                                            <TableCell className="font-medium">{list.name}</TableCell>
+                                            <TableCell className="font-medium">{list.emailAddress}</TableCell>
+                                            <TableCell className="font-medium">{list.dateJoined}</TableCell>
+                                        </TableRow>
+                                    </DialogTrigger>
+                                    <DialogContent className="sm:max-w-[425px] pt-[57px]  rounded-lg flex flex-col items-center">
+                                        <DialogHeader className="mb-8">
+                                            <DialogTitle className="text-[#602712]">{list.name}</DialogTitle>
+                                        </DialogHeader>
+                                        <div className="flex flex-col gap-8 text-base">
+                                            <div className="flex gap-[11px] md:gap-[51px]">
+                                                <span className="w-[124px] text-[#1E1E1E80]">Date joined: </span>
+                                                <span className="text-[#602712]">{list.dateJoined}</span>
+                                            </div>
+                                            <div className="flex gap-[11px] md:gap-[51px]">
+                                                <span className="w-[124px] text-[#1E1E1E80]">Email address: </span>
+                                                <span className="text-[#602712]">{list.emailAddress}</span>
+                                            </div>
+                                            <div className="flex gap-[11px] md:gap-[51px]">
+                                                <span className="w-[124px] text-[#1E1E1E80]">Subscription plan: </span>
+                                                <span className="text-[#602712]">{list.subscription} MONTH PLAN</span>
+                                            </div>
+                                            <div className="flex gap-[11px] md:gap-[51px]">
+                                                <span className="w-[124px] text-[#1E1E1E80]">Last purchase: </span>
+                                                <span className="text-[#602712]">{list.dateJoined}</span>
+                                            </div>
+                                        </div>
+                                    </DialogContent>
+                                </Dialog>
                             ))
                         }
                     </TableBody>
@@ -55,7 +90,3 @@ const Students = () => {
     )
 }
 export default Students
-
-// Name
-// Email  address
-// Date joined
