@@ -8,6 +8,7 @@ import {
 } from "@/app/admin/component/CategoryContents";
 import {AllContent, PendingContent, SuccessfulContent} from "@/app/admin/(pages)/transactions/transactionsTabContent";
 import {Accepted, Pending} from "@/app/admin/(pages)/tutors/tutorsTabsContent";
+import {Active, InActive} from "@/app/admin/(pages)/students/components/studentStatus/studentStatusContent";
 
 interface AdminCarouselItem {
     title: string;
@@ -340,41 +341,62 @@ export const studentDashboardTable = [
         emailAddress: "michelle.rivera@example.com",
         dateJoined: formattedDate,
         subscription: '1',
+        status: "active"
     },
     {
         name: "Little Finger",
         emailAddress: "abcd@example.com",
         dateJoined: formattedDate,
         subscription: '3',
+        status: "inactive"
     },
     {
         name: "John Snow",
         emailAddress: "efgh@example.com",
         dateJoined: formattedDate,
         subscription: '6',
+        status: "active"
     },
     {
         name: "Wilson Kristen",
         emailAddress: "wxyz@example.com",
         dateJoined: formattedDate,
         subscription: '1',
+        status: "active"
     },
     {
         name: "David Moore",
         emailAddress: "mnop@example.com",
         dateJoined: formattedDate,
         subscription: '3',
+        status: "inactive"
     },
     {
         name: "Billy Graham",
         emailAddress: "abcd@example.com",
         dateJoined: formattedDate,
         subscription: '6',
+        status: "active"
     },
 ]
 
+let activeCount = 0
+let inActiveCount = 0
+studentDashboardTable.map(list => (
+    list.status === "active"
+        ? activeCount++
+        : inActiveCount++
+))
 
-
-
-
-
+export const adminStudentStatusTab = [
+    {
+        title: 'Active',
+        count: activeCount,
+        content: <Active />
+    },
+    {
+        title: 'Inactive',
+        count: inActiveCount,
+        content: <InActive />
+    },
+]

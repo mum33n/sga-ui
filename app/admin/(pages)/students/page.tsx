@@ -4,13 +4,16 @@ import {Button} from "@/components/ui/button";
 import {Search} from "lucide-react";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import { studentDashboardTable } from "@/app/admin/component/AdminArrays";
+import Link from "next/link";
 
 const Students = () => {
     return (
         <>
             <div className="flex justify-between items-center px-5 mb-4">
                 <span className="text-2xl font-normal text-[#602712] mb-6">Student(789)</span>
-                <Button className="py-[5px] leading-none h-fit px-2.5 border border-[#1D7C1B] text-[#1D7C1B] text-sm font-medium mb-6 bg-white">Students Status</Button>
+                <Link href={'/admin/students/components/studentStatus'}>
+                    <Button className="py-[5px] leading-none h-fit px-2.5 border border-[#602712] text-[#602712] text-sm font-medium mb-6 bg-white">Students Status</Button>
+                </Link>
             </div>
             <div className="relative px-5 mb-8">
                 <input

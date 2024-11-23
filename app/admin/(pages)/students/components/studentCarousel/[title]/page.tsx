@@ -1,13 +1,13 @@
 'use client'
 import React from 'react'
-import {useParams, useRouter} from "next/navigation";
+import {useParams} from "next/navigation";
 import {studentCarouselContent, studentDashboardTable} from "@/app/admin/component/AdminArrays";
 import {Search} from "lucide-react";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
+import {BackButton} from "@/app/admin/component/reuseables";
 
 
 const CarouselItemPage = () => {
-    const router = useRouter();
     const params = useParams();
     const { title } = params; // Get the dynamic `title` segment from the URL
 
@@ -18,21 +18,9 @@ const CarouselItemPage = () => {
         return <div>Item not found</div>; // Handle case when the item is not found
     }
 
-    const handleBack = () => {
-        if (window.history.length >= 1) {
-            router.back(); // Go to the previous page
-        } else {
-            router.push('/admin/page.tsx'); // Fallback route
-        }
-    };
-
     return (
         <>
-            <button
-                className="text-lg text-[#602712] cursor-pointer px-5 mb-8"
-                onClick={handleBack}>
-                Back
-            </button>
+            <BackButton />
             <h2 className="text-2xl font-normal text-[#602712] px-5 mb-4">
                 {carouselItem.title} Month Plan ({carouselItem.count})
             </h2>
