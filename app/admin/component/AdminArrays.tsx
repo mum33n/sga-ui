@@ -339,31 +339,37 @@ export const studentDashboardTable = [
         name: "Musok Artola",
         emailAddress: "michelle.rivera@example.com",
         dateJoined: formattedDate,
+        subscription: '1',
     },
     {
         name: "Little Finger",
         emailAddress: "abcd@example.com",
         dateJoined: formattedDate,
+        subscription: '3',
     },
     {
         name: "John Snow",
         emailAddress: "efgh@example.com",
         dateJoined: formattedDate,
+        subscription: '6',
     },
     {
         name: "Wilson Kristen",
         emailAddress: "wxyz@example.com",
         dateJoined: formattedDate,
+        subscription: '1',
     },
     {
         name: "David Moore",
         emailAddress: "mnop@example.com",
         dateJoined: formattedDate,
+        subscription: '3',
     },
     {
         name: "Billy Graham",
         emailAddress: "abcd@example.com",
         dateJoined: formattedDate,
+        subscription: '6',
     },
 ]
 
