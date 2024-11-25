@@ -56,7 +56,7 @@ const items = [
     },
     {
         title: "Assignments",
-        url: "#",
+        url: "/admin/assignments",
         icon: MdAssignmentAdd,
     },
     {

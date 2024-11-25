@@ -9,6 +9,7 @@ import {
 import {AllContent, PendingContent, SuccessfulContent} from "@/app/admin/(pages)/transactions/transactionsTabContent";
 import {Accepted, Pending} from "@/app/admin/(pages)/tutors/tutorsTabsContent";
 import {Active, InActive} from "@/app/admin/(pages)/students/components/studentStatus/studentStatusContent";
+import {Reviewed, AssPending} from "@/app/admin/(pages)/assignments/assignmentTabsContent";
 
 interface AdminCarouselItem {
     title: string;
@@ -225,7 +226,7 @@ export const transactionLineUp = [
         status: "pending",
         date: formattedDate,
         time: formattedTime,
-        transactionType: "Purchased Spicy Unit\n",
+        transactionType: "Purchased Spicy Unit",
         finalResult: "Pending"
     },
     {
@@ -398,5 +399,100 @@ export const adminStudentStatusTab = [
         title: 'Inactive',
         count: inActiveCount,
         content: <InActive />
+    },
+]
+
+
+export const assignmentsTab = [
+    {
+        title: 'Reviewed',
+        count: 21,
+        content: <Reviewed />
+    },
+    {
+        title: 'Pending',
+        count: 37,
+        content: <AssPending />
+    },
+]
+
+
+export const assignmentsTabContent = [
+    {
+        dateSubmitted: formattedDate,
+        timeSubmitted: formattedTime,
+        name: "Devil foot",
+        emailAddress: "michelle.rivera@example.com",
+        level: "Beginner",
+        lesson: "Make Lessons Load......",
+        rating: 2,
+        title: 'Guitar Essentials for Beginners',
+        status: "reviewed"
+    },
+    {
+        dateSubmitted: formattedDate,
+        timeSubmitted: formattedTime,
+        name: "Yami Sukehiro",
+        emailAddress: "abcd@example.com",
+        level: "intermediate",
+        lesson: "Make Lessons Load......",
+        rating: 4,
+        title: 'Mastering the Piano: Intermediate Techniques',
+        status: "pending",
+    },
+    {
+        dateSubmitted: formattedDate,
+        timeSubmitted: formattedTime,
+        name: "Wilson Kristen",
+        emailAddress: "efgh@example.com",
+        level: "advance",
+        lesson: "Make Lessons Load......",
+        rating: 5,
+        title: 'The Art of Drumming: Rhythm and Percussion',
+        status: "reviewed",
+    },
+    {
+        dateSubmitted: formattedDate,
+        timeSubmitted: formattedTime,
+        name: "David Moore",
+        emailAddress: "mnop@example.com",
+        level: "Beginner",
+        lesson: "Make Lessons Load......",
+        rating: 1,
+        title: 'Jazz Saxophone Workshop',
+        status: "pending",
+    },
+    {
+        dateSubmitted: formattedDate,
+        timeSubmitted: formattedTime,
+        name: "Little Finger",
+        emailAddress: "wxyz@example.com",
+        level: "Intermediate",
+        lesson: "Make Lessons Load......",
+        rating: 2,
+        title: 'Mastering the Piano: Intermediate Techniques',
+        status: "reviewed"
+    },
+    {
+        dateSubmitted: formattedDate,
+        timeSubmitted: formattedTime,
+        name: "Billy Graham",
+        emailAddress: "mesh@example.com",
+        level: "Advance",
+        lesson: "Make Lessons Load......",
+        rating: 3,
+        title: 'Mastering the Piano: Intermediate Techniques',
+        status: "pending"
+    },
+    {
+        dateSubmitted: formattedDate,
+        timeSubmitted: formattedTime,
+        name: "Musok Artola",
+        emailAddress: "musok@example.com",
+        level: "Beginner",
+        lesson: "Make Lessons Load......",
+        rating: 4,
+        title: 'Jazz Saxophone Workshop',
+        status: "reviewed"
     },
 ]
