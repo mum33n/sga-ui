@@ -10,6 +10,7 @@ import {AllContent, PendingContent, SuccessfulContent} from "@/app/admin/(pages)
 import {Accepted, Pending} from "@/app/admin/(pages)/tutors/tutorsTabsContent";
 import {Active, InActive} from "@/app/admin/(pages)/students/components/studentStatus/studentStatusContent";
 import {Reviewed, AssPending} from "@/app/admin/(pages)/assignments/assignmentTabsContent";
+import {SupportAll, SupportResolved, SupportUnresolved} from "@/app/admin/(pages)/support/supportTabsContent";
 
 interface AdminCarouselItem {
     title: string;
@@ -494,5 +495,89 @@ export const assignmentsTabContent = [
         rating: 4,
         title: 'Jazz Saxophone Workshop',
         status: "reviewed"
+    },
+]
+
+
+export const supportTabContent = [
+    {
+        dateSubmitted: formattedDate,
+        emailAddress: "michelle.rivera@example.com",
+        status: "resolved"
+    },
+    {
+        dateSubmitted: formattedDate,
+        emailAddress: "abcd@example.com",
+        status: "unresolved",
+    },
+    {
+        dateSubmitted: formattedDate,
+        emailAddress: "efgh@example.com",
+        status: "resolved",
+    },
+    {
+        dateSubmitted: formattedDate,
+        emailAddress: "mnop@example.com",
+        status: "resolved",
+    },
+    {
+        dateSubmitted: formattedDate,
+        emailAddress: "wxyz@example.com",
+        status: "resolved",
+    },
+    {
+        dateSubmitted: formattedDate,
+        emailAddress: "mesh@example.com",
+        status: "unresolved",
+    },
+    {
+        dateSubmitted: formattedDate,
+        emailAddress: "musok@example.com",
+        status: "resolved",
+    },
+]
+
+let resolvedCount = 0
+let unresolvedCount = 0
+supportTabContent.map(list => (
+    list.status === "resolved"
+        ? resolvedCount++
+        : unresolvedCount++
+))
+
+export const supportTabs = [
+    {
+        title: 'All',
+        count: supportTabContent.length,
+        content: <SupportAll />
+    },
+    {
+        title: 'Resolved',
+        count: resolvedCount,
+        content: <SupportResolved />
+    },
+    {
+        title: 'Unresolved',
+        count: unresolvedCount,
+        content: <SupportUnresolved />
+    },
+]
+
+export const chatCategories = [
+    {
+        category: "Beginners",
+        chatPage: "",
+    },
+    {
+        category: "Amateurs",
+        chatPage: "",
+    },
+    {
+        category: "Intermediate",
+        chatPage: "",
+    },
+    {
+        category: "Advance",
+        chatPage: "",
     },
 ]

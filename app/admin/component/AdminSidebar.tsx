@@ -61,12 +61,12 @@ const items = [
     },
     {
         title: "Chat Forum",
-        url: "#",
+        url: "/admin/chatForum",
         icon: PiChatsCircle,
     },
     {
         title: "Support",
-        url: "#",
+        url: "/admin/support",
         icon: UserRoundCog,
     },
 ]
