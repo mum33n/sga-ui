@@ -83,11 +83,13 @@ const AdminSidebar = () => {
                             <X style={{ width: '30px', height: '30px', color: 'black', backgroundColor: '#FDF4E9', borderRadius: '50px', padding: '5px' }} />
                         </div>
 
-                        <div className="flex gap-2">
-                            <FaUserCircle style={{ width: '28px', height: '28', color: 'black' }}/>
-                            <p className="font-medium text-xl text-black">Maradesa</p>
-                        </div>
-                    </SidebarGroupLabel>
+                        <Link href="/admin/component/admProfile">
+                            <div className="flex gap-2 cursor-pointer">
+                                <FaUserCircle style={{width: '28px', height: '28', color: 'black'}}/>
+                                <p className="font-medium text-xl text-black">Maradesa</p>
+                            </div>
+                        </Link>
+                </SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu className="flex gap-6">
                             {items.map((item) => (
