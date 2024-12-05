@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={cabin.className}>
-      <body className='min-h-screen bg-white'>{children}</body>
+      <body className='min-h-screen'>{children}</body>
     </html>
   )
 }

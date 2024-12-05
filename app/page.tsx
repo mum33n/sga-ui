@@ -1,13 +1,13 @@
-import {DataProvider} from "@/app/admin/component/DataContext";
+// import {DataProvider} from "@/app/admin/component/DataContext";
 
 export default function Home() {
   return (
       <>
-          <DataProvider>
+          {/* <DataProvider> */}
               <div className="">
                   Spicy Guitar Academy
               </div>
-          </DataProvider>
+          {/* </DataProvider> */}
       </>
   );
 }
