@@ -1,7 +1,13 @@
+import {DataProvider} from "@/app/admin/component/DataContext";
+
 export default function Home() {
   return (
-    <div className="">
-      Spicy Guitar Academy
-    </div>
+      <>
+          <DataProvider>
+              <div className="">
+                  Spicy Guitar Academy
+              </div>
+          </DataProvider>
+      </>
   );
 }

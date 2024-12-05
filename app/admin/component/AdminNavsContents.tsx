@@ -3,6 +3,7 @@ import {categoryCoursesArray} from "@/app/admin/component/AdminArrays";
 import {EllipsisVertical, PencilLine, Plus} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {Checkbox} from "@/components/ui/checkbox";
+import Link from "next/link";
 
 export const AdminNavsContents = () => {
     return (
@@ -17,14 +18,16 @@ export const AdminNavsContents = () => {
                          className={`w-full h-24 flex  px-4 justify-between items-center`}>
                         <span className="flex gap-2 items-center">
                             <h1 className="font-normal text-lg">{course.title}</h1>
-                            <PencilLine color={'#A85334'} size={18}/>
+                            {/*<PencilLine color={'#602712'} size={18}/>*/}
                         </span>
                         <p className="text-lg">{course.count}</p>
-                        <Button
-                            className="py-[5px] px-7 text-lg bg-white text-[#A85334] border border-[#A85334]"
-                        >
-                            View
-                        </Button>
+                        <Link href={'/admin/courses/category'} passHref>
+                            <Button
+                                className="py-[5px] px-7 text-lg bg-white text-[#602712] border border-[#602712]"
+                            >
+                                View
+                            </Button>
+                        </Link>
                     </div>
                 ))}
             </div>
@@ -47,7 +50,7 @@ export const FreeCourses = () => {
                         Select
                     </label>
                 </div>
-                <Button className="bg-[#A85334] text-[16px]">
+                <Button className="bg-[#602712] text-[16px]">
                     <Plus/> Add course
                 </Button>
             </div>
@@ -74,3 +77,4 @@ export const FreeCourses = () => {
         </>
     )
 }
+

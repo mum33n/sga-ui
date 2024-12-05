@@ -93,6 +93,11 @@ body {
   scrollbar-width: none;  /* For Firefox */
 }
 
+.common-button {
+  padding: 5px 16px;
+  background-color: #602712;
+}
+
 @layer base {
   * {
     @apply border-border;

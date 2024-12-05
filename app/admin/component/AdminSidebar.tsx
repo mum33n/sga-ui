@@ -31,42 +31,42 @@ const items = [
     },
     {
         title: "Courses",
-        url: "/admin/pages/courses",
+        url: "/admin/courses",
         icon: BookOpen,
     },
     {
         title: "Subscription plans",
-        url: "/admin/pages/subscriptions",
+        url: "/admin/subscriptions",
         icon: PiNotebookDuotone,
     },
     {
         title: "Transactions",
-        url: "/admin/pages/transactions",
+        url: "/admin/transactions",
         icon: ArrowLeftRight,
     },
     {
         title: "Tutors",
-        url: "#",
+        url: "/admin/tutors",
         icon: PiChalkboardTeacherLight,
     },
     {
         title: "Students",
-        url: "#",
+        url: "/admin/students",
         icon: PiStudentFill,
     },
     {
         title: "Assignments",
-        url: "#",
+        url: "/admin/assignments",
         icon: MdAssignmentAdd,
     },
     {
         title: "Chat Forum",
-        url: "#",
+        url: "/admin/chatForum",
         icon: PiChatsCircle,
     },
     {
         title: "Support",
-        url: "#",
+        url: "/admin/support",
         icon: UserRoundCog,
     },
 ]
@@ -83,11 +83,13 @@ const AdminSidebar = () => {
                             <X style={{ width: '30px', height: '30px', color: 'black', backgroundColor: '#FDF4E9', borderRadius: '50px', padding: '5px' }} />
                         </div>
 
-                        <div className="flex gap-2">
-                            <FaUserCircle style={{ width: '28px', height: '28', color: 'black' }}/>
-                            <p className="font-medium text-xl text-black">Maradesa</p>
-                        </div>
-                    </SidebarGroupLabel>
+                        <Link href="/admin/component/admProfile">
+                            <div className="flex gap-2 cursor-pointer">
+                                <FaUserCircle style={{width: '28px', height: '28', color: 'black'}}/>
+                                <p className="font-medium text-xl text-black">Maradesa</p>
+                            </div>
+                        </Link>
+                </SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu className="flex gap-6">
                             {items.map((item) => (
