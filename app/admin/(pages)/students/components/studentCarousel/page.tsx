@@ -8,7 +8,7 @@ import {
 import { studentCarouselContent } from "@/app/admin/component/AdminArrays";
 import Link from "next/link";
 
-export function StudentCarousel() {
+const StudentCarousel = () => {
     return (
         <Carousel className="max-w-sm pl-3 mb-10">
             <CarouselContent className="-ml-1">
@@ -44,3 +44,5 @@ export function StudentCarousel() {
         </Carousel>
     );
 }
+
+export default StudentCarousel

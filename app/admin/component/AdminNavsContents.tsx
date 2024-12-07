@@ -1,6 +1,6 @@
 import React from 'react'
 import {categoryCoursesArray} from "@/app/admin/component/AdminArrays";
-import {EllipsisVertical, PencilLine, Plus} from "lucide-react";
+import {EllipsisVertical, Plus} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {Checkbox} from "@/components/ui/checkbox";
 import Link from "next/link";

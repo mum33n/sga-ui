@@ -1,5 +1,5 @@
 import React from 'react'
-import {StudentCarousel} from "@/app/admin/(pages)/students/components/studentCarousel/page";
+import StudentCarousel from "@/app/admin/(pages)/students/components/studentCarousel/page";
 import {Button} from "@/components/ui/button";
 import {Search} from "lucide-react";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
