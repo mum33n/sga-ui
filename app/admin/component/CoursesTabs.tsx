@@ -32,7 +32,7 @@ export function CoursesTabs({ courses }: CoursesTabsProps) {
             <h1 className="font-normal text-2xl overflow-x-hidden mb-5">{courses[activeButton].head}</h1>
             <Tabs defaultValue={courses[0]?.title || ""} className="">
                 {/* Wrap TabsTrigger items in TabsList */}
-                <TabsList className="flex items-end border-b border-[#F0EAE8] overflow-x-auto no-scrollbar w-fit">
+                <TabsList className="flex items-end border-b border-[#F0EAE8] w-screen overflow-x-auto no-scrollbar">
                     {courses.map((course, index) => (
                         <TabsTrigger
                             key={index}

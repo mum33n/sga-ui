@@ -1,14 +1,9 @@
 'use client';
 
 import React from 'react'
-import { FaUserCircle } from "react-icons/fa";
-import { PiChartPieSliceFill } from "react-icons/pi";
-import { PiNotebookDuotone } from "react-icons/pi";
-import { PiChalkboardTeacherLight } from "react-icons/pi";
-import { PiStudentFill } from "react-icons/pi";
+import { FaUserCircle,  } from "react-icons/fa";
+import { PiChartPieSliceFill, PiChatsCircle, PiStudentFill, PiNotebookDuotone, PiChalkboardTeacherLight } from "react-icons/pi";
 import { MdAssignmentAdd } from "react-icons/md";
-import { PiChatsCircle } from "react-icons/pi";
-
 import {ArrowLeftRight, X, BookOpen, Users, UserRoundCog} from "lucide-react"
 
 import {
@@ -76,10 +71,10 @@ const AdminSidebar = () => {
 
     return (
         <Sidebar >
-            <SidebarContent className="py-4 px-8" >
+            <SidebarContent className="py-4 px-8 no-scrollbar">
                 <SidebarGroup className="flex flex-col gap-16">
                     <SidebarGroupLabel className="flex flex-col gap-1 items-start">
-                        <div className="w-full flex justify-end cursor-pointer" onClick={toggleSidebar}>
+                        <div className="w-full flex justify-end cursor-pointer md:invisible" onClick={toggleSidebar}>
                             <X style={{ width: '30px', height: '30px', color: 'black', backgroundColor: '#FDF4E9', borderRadius: '50px', padding: '5px' }} />
                         </div>
 

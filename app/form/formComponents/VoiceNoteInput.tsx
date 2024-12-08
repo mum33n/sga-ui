@@ -53,13 +53,13 @@ const VoiceNoteInput: React.FC<VoiceNoteInputProps> = ({ onVoiceNoteRecorded }) 
     };
 
     return (
-        <FormItem className="space-y-2">
+        <FormItem className="w-full md:w-[48%]">
             <FormLabel></FormLabel>
-            <FormControl>
+            <FormControl className="">
                 <div className="flex items-center gap-3">
                     <button
                         type="button"
-                        className={`text-sm w-52 h-10 rounded-lg ${isRecording ? "bg-red-500" : "bg-[#F0EAE8]"} text-black px-4 py-3 cursor-pointer border border-[#C4AAA1] flex items-center`}
+                        className={`text-sm w-full h-10 rounded-lg ${isRecording ? "bg-red-500" : "bg-[#F0EAE8]"} text-black px-4 py-3 cursor-pointer border border-[#C4AAA1] flex items-center`}
                         onClick={isRecording ? handleStopRecording : handleStartRecording}
                     >
                         {

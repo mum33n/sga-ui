@@ -9,12 +9,12 @@ import {
 
 export function CarouselSpacing() {
     return (
-        <Carousel className="max-w-sm pl-3 mb-10">
-            <CarouselContent className="-ml-1">
+        <Carousel className="max-w-sm md:max-w-screen-2xl pl-3 mb-10">
+            <CarouselContent className="-ml-1 md:space-x-2">
                 {carouselArrays.map((item) => (
                     <CarouselItem
                         key={item.title}
-                        className="pl-1 md:basis-1/2 lg:basis-1/3"
+                        className="pl-1"
                     >
                         <div className="p-1 w-fit">
                             <Card className="h-[102px] w-40 items-center justify-center overflow-hidden">
@@ -25,7 +25,7 @@ export function CarouselSpacing() {
                                         backgroundPosition: "-350% -110%",
                                     }}
                                 >
-                                    <div className="flex flex-col px-5 py-[10px] justify-between">
+                                    <div className="flex flex-col px-5 py-[10px] justify-between text-[#602712]">
                                         <span className="text-[18px] font-medium whitespace-nowrap">
                                             {item.title}
                                         </span>

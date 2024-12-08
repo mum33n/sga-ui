@@ -88,7 +88,7 @@ export default function ProfileForm() {
         }
     };
 
-    const [currentStep, setCurrentStep] = useState(1);
+    const [currentStep, setCurrentStep] = useState(0);
     const [formData, setFormData] = useState<StepOneValues & StepTwoValues>({
         courseTitle: "",
         courseOrder: "",
@@ -303,14 +303,14 @@ export default function ProfileForm() {
                                 </Button>
                                 <ArrowUpNarrowWide className="cursor-pointer" />
                             </div>
-                            <>
+                            <section className="w-full flex flex-wrap justify-center md:justify-between items-center gap-3.5">
                                 <FormField
                                     control={form.control}
                                     name={"assignmentAudio"}
                                     render={({field}) => (
-                                        <FormItem className="space-y-1">
+                                        <FormItem className="space-y-1 w-full md:w-[48%]">
                                             <FormLabel></FormLabel>
-                                            <FormControl>
+                                            <FormControl className="">
                                                 <>
                                                     <input
                                                         type="file"
@@ -321,7 +321,7 @@ export default function ProfileForm() {
                                                     />
                                                     <label
                                                         htmlFor="audio-file"
-                                                        className="w-52 h-10 px-4 py-3 rounded-lg flex items-center cursor-pointer border border-[#C4AAA1] bg-[#F0EAE8]"
+                                                        className="w-full h-10 px-4 py-3 rounded-lg flex items-center cursor-pointer border border-[#C4AAA1] bg-[#F0EAE8]"
                                                     >
                                                         {field.value instanceof File
                                                             ? field.value.name
@@ -340,7 +340,7 @@ export default function ProfileForm() {
                                     control={form.control}
                                     name="assignmentImage"
                                     render={({field}) => (
-                                        <FormItem className="space-y-1">
+                                        <FormItem className="space-y-1 w-full md:w-[48%]">
                                             <FormLabel></FormLabel>
                                             <FormControl>
                                                 <>
@@ -353,7 +353,7 @@ export default function ProfileForm() {
                                                     />
                                                     <label
                                                         htmlFor="assignment-image"
-                                                        className="w-52 h-10 px-4 py-3 rounded-lg flex items-center cursor-pointer border border-[#C4AAA1] bg-[#F0EAE8]"
+                                                        className="w-full h-10 px-4 py-3 rounded-lg flex items-center cursor-pointer border border-[#C4AAA1] bg-[#F0EAE8]"
                                                     >
                                                         {field.value instanceof File
                                                             ? field.value.name
@@ -372,7 +372,7 @@ export default function ProfileForm() {
                                 <FormField
                                     control={form.control}
                                     name="voiceNote"
-                                    render={({ field }) => (
+                                    render={({  }) => (
                                         <VoiceNoteInput
                                             onVoiceNoteRecorded={(audioFile) => form.setValue("voiceNote", audioFile)}
                                         />
@@ -383,7 +383,7 @@ export default function ProfileForm() {
                                     control={form.control}
                                     name="courseVideo"
                                     render={({ field }) => (
-                                        <FormItem className="space-y-1">
+                                        <FormItem className="space-y-1 w-full md:w-[48%]">
                                             <FormLabel></FormLabel>
                                             <FormControl>
                                                 <>
@@ -396,7 +396,7 @@ export default function ProfileForm() {
                                                     />
                                                     <label
                                                         htmlFor="course-video"
-                                                        className="w-52 h-10 px-4 py-3 rounded-lg flex items-center cursor-pointer border border-[#C4AAA1] bg-[#F0EAE8] text-sm"
+                                                        className="w-full h-10 px-4 py-3 rounded-lg flex items-center cursor-pointer border border-[#C4AAA1] bg-[#F0EAE8] text-sm"
                                                     >
                                                         {
                                                             field.value instanceof File
@@ -413,7 +413,7 @@ export default function ProfileForm() {
                                         </FormItem>
                                     )}
                                 />
-                            </>
+                            </section>
                             <div className="flex justify-between">
                                 <Button
                                     onClick={prev}

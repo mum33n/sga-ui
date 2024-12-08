@@ -1,6 +1,6 @@
 import React from 'react'
 import {categoryCoursesArray} from "@/app/admin/component/AdminArrays";
-import {EllipsisVertical, PencilLine, Plus} from "lucide-react";
+import {EllipsisVertical, Plus} from "lucide-react";
 import {Button} from "@/components/ui/button";
 import {Checkbox} from "@/components/ui/checkbox";
 import Link from "next/link";
@@ -12,7 +12,7 @@ export const AdminNavsContents = () => {
                 <span>Category</span>
                 <span>Courses</span>
             </div>
-            <div className="mt-4">
+            <div className="mt-4 w-[855px]">
                 {categoryCoursesArray.map((course, index: number) => (
                     <div key={index} style={{backgroundColor: course.color}}
                          className={`w-full h-24 flex  px-4 justify-between items-center`}>
