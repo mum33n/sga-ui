@@ -14,7 +14,7 @@ import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/c
 import {studentDashboardTable} from "@/app/admin/component/AdminArrays";
 import React from "react";
 
-export function DialogDemo() {
+const DialogDemo = () => {
     return (
         <>
             <Table className="mt-7">
@@ -78,3 +78,5 @@ export function DialogDemo() {
 
     )
 }
+
+export default DialogDemo

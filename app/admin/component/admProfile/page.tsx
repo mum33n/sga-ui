@@ -77,7 +77,7 @@ const AdmProfile = () => {
                 <div className="flex gap-3.5 items-center mb-8">
                     <Image
                         src='/nft3.jpeg'
-                        alt=""
+                        alt={`Profile picture of ${formData.firstName} ${formData.surname}`}
                         width={114}
                         height={114}
                         className="w-28 h-28 rounded-[37px] object-cover"

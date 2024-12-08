@@ -20,7 +20,7 @@ export const BeginnerContent = () => {
                     <div key={index} className="w-[348px] border border-[#F0EAE8] py-6 px-3 mt-5 rounded-lg cursor-pointer">
                         <Image
                             src={course.image}
-                            alt=""
+                            alt={`Course thumbnail for ${course.title}`}
                             width={320}
                             height={160}
                             className="w-80 h-40 rounded-[6px] mb-3.5 object-cover"

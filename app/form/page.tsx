@@ -22,63 +22,87 @@ import {ArrowUpNarrowWide, CircleAlert, Headphones, Plus, X, Image, Film} from "
 import {clsx} from "clsx";
 import VoiceNoteInput from "@/app/form/formComponents/VoiceNoteInput";
 
-// Define schemas for each step
-const stepOneSchema = z.object({
-    courseTitle: z.string().min(1, { message: "Course title is required." }),
-    courseOrder: z.string().min(5, { message: "Course order must be at least 5 characters." }),
-    description: z.string().min(2, { message: "Description must be at least 2 characters." }),
-    courseThumbnail: z.any().refine(
-        (file) => file instanceof File && file.size <= 5 * 1024 * 1024,
-        { message: "Image size should be less than 5MB." }
-    ).refine(
-        (file) => file instanceof File && ["image/jpeg", "image/png", "image/gif"].includes(file.type),
-        { message: "Only JPEG, PNG, or GIF images are allowed." }
-    ),
-});
-
-const stepTwoSchema = z.object({
-    assignmentQuestion: z.string().min(1, { message: "Assignment question is required." }),
-    assignmentAudio: z
-        .any()
-        .refine(
-            (file) => file instanceof File && file.size <= 10 * 1024 * 1024,
-            { message: "Audio file size should be less than 10MB." }
-        )
-        .refine(
-            (file) =>
-                file instanceof File &&
-                ["audio/mpeg", "audio/wav", "audio/ogg"].includes(file.type),
-            { message: "Only MP3, WAV, or OGG audio formats are allowed." }
-        )
-        .nullable(),
-    assignmentImage: z.any().refine(
-        (file) => file instanceof File && file.size <= 5 * 1024 * 1024,
-        { message: "Image size should be less than 5MB." }
-    ).refine(
-        (file) => file instanceof File && ["image/jpeg", "image/png", "image/gif"].includes(file.type),
-        { message: "Only JPEG, PNG, or GIF images are allowed." }
-    ),
-    voiceNote: z.any().refine(
-        (file) => file instanceof File && file.size <= 10 * 1024 * 1024,
-        { message: "Voice note must be less than 10MB." }
-    ),
-    courseVideo: z
-        .any()
-        .refine(
-            (file) => file instanceof File && file.size <= 50 * 1024 * 1024,
-            { message: "Video size should be less than 50MB." }
-        )
-        .refine(
-            (file) => file instanceof File && ["video/mp4", "video/webm", "video/ogg"].includes(file.type),
-            { message: "Only MP4, WebM, or OGG videos are allowed." }
-        ),
-});
-
-type StepOneValues = z.infer<typeof stepOneSchema>;
-type StepTwoValues = z.infer<typeof stepTwoSchema>;
-
-export default function ProfileForm() {
+const ProfileForm = () => {
     const router = useRouter();
+
+    const stepOneSchema = z.object({
+        courseTitle: z.string().min(1, { message: "Course title is required." }),
+        courseOrder: z.string().min(5, { message: "Course order must be at least 5 characters." }),
+        description: z.string().min(2, { message: "Description must be at least 2 characters." }),
+        courseThumbnail: z.any().refine(
+            (file) => {
+                if (typeof window === 'undefined') return true; // Skip validation on server
+                return file instanceof File && file.size <= 5 * 1024 * 1024;
+            },
+            { message: "Image size should be less than 5MB." }
+        ).refine(
+            (file) => {
+                if (typeof window === 'undefined') return true; // Skip validation on server
+                return file instanceof File && ["image/jpeg", "image/png", "image/gif"].includes(file.type);
+            },
+            { message: "Only JPEG, PNG, or GIF images are allowed." }
+        ),
+    });
+
+    const stepTwoSchema = z.object({
+        assignmentQuestion: z.string().min(1, { message: "Assignment question is required." }),
+        assignmentAudio: z
+            .any()
+            .refine(
+                (file) => {
+                    if (typeof window === 'undefined') return true;
+                    return file === null || (file instanceof File && file.size <= 10 * 1024 * 1024);
+                },
+                { message: "Audio file size should be less than 10MB." }
+            )
+            .refine(
+                (file) => {
+                    if (typeof window === 'undefined') return true;
+                    return file === null || (file instanceof File && ["audio/mpeg", "audio/wav", "audio/ogg"].includes(file.type));
+                },
+                { message: "Only MP3, WAV, or OGG audio formats are allowed." }
+            )
+            .nullable(),
+        assignmentImage: z.any().refine(
+            (file) => {
+                if (typeof window === 'undefined') return true;
+                return file instanceof File && file.size <= 5 * 1024 * 1024;
+            },
+            { message: "Image size should be less than 5MB." }
+        ).refine(
+            (file) => {
+                if (typeof window === 'undefined') return true;
+                return file instanceof File && ["image/jpeg", "image/png", "image/gif"].includes(file.type);
+            },
+            { message: "Only JPEG, PNG, or GIF images are allowed." }
+        ),
+        voiceNote: z.any().refine(
+            (file) => {
+                if (typeof window === 'undefined') return true;
+                return file instanceof File && file.size <= 10 * 1024 * 1024;
+            },
+            { message: "Voice note must be less than 10MB." }
+        ),
+        courseVideo: z
+            .any()
+            .refine(
+                (file) => {
+                    if (typeof window === 'undefined') return true;
+                    return file instanceof File && file.size <= 50 * 1024 * 1024;
+                },
+                { message: "Video size should be less than 50MB." }
+            )
+            .refine(
+                (file) => {
+                    if (typeof window === 'undefined') return true;
+                    return file instanceof File && ["video/mp4", "video/webm", "video/ogg"].includes(file.type);
+                },
+                { message: "Only MP4, WebM, or OGG videos are allowed." }
+            ),
+    });
+
+    type StepOneValues = z.infer<typeof stepOneSchema>;
+    type StepTwoValues = z.infer<typeof stepTwoSchema>;
 
     const handleBack = () => {
         if (window.history.length > 1) {
@@ -137,7 +161,7 @@ export default function ProfileForm() {
     };
 
     const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>, name) => {
-        if (event.target.files && event.target.files[0]) {
+        if (typeof window !== 'undefined' && event.target.files && event.target.files[0]) {
             const file = event.target.files[0];
             form.setValue(name, file); // Update the form value
             console.log(file); // Debugging
@@ -145,7 +169,7 @@ export default function ProfileForm() {
     };
 
     const handleAudioChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        if (event.target.files && event.target.files[0]) {
+        if (typeof window !== 'undefined' && event.target.files && event.target.files[0]) {
             const file = event.target.files[0];
             form.setValue("assignmentAudio", file); // Update the form value
             console.log(file); // Debugging: Log the audio file
@@ -153,7 +177,7 @@ export default function ProfileForm() {
     };
 
     const handleVideoChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        if (event.target.files && event.target.files[0]) {
+        if (typeof window !== 'undefined' && event.target.files && event.target.files[0]) {
             const file = event.target.files[0];
             form.setValue("courseVideo", file); // Update form value for video
             console.log("Selected video file:", file); // Debugging
@@ -184,7 +208,7 @@ export default function ProfileForm() {
             </div>
 
             <Form {...form}>
-                {currentStep === 0 && (
+                {Number(currentStep as number) === 0 && (
                     <>
                         <form className="space-y-7">
                             <FormField
@@ -254,7 +278,7 @@ export default function ProfileForm() {
                                                     htmlFor="course-thumbnail"
                                                     className="text-sm bg-[#F2E9DF] w-fit px-4 py-3 rounded-lg flex items-center justify-center cursor-pointer"
                                                 >
-                                                    {field.value instanceof File ? field.value.name : "Select course thumbnail"}
+                                                    {typeof window !== 'undefined' && field.value instanceof File ? field.value.name : "Select course thumbnail"}
                                                 </label>
                                             </>
                                         </FormControl>
@@ -266,7 +290,7 @@ export default function ProfileForm() {
                             <div className="flex justify-center">
                                 <Button
                                     onClick={next}
-                                    className={clsx("w-40 h-11", currentStep === 1 && "hidden")}
+                                    className={clsx("w-40 h-11", Number(currentStep as number) === 1 && "hidden")}
                                 >
                                     Next
                                 </Button>
@@ -276,7 +300,7 @@ export default function ProfileForm() {
 
                 )}
 
-                {currentStep === 1 && (
+                {Number(currentStep as number) === 1 && (
                     <>
                         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                             <FormField
@@ -303,14 +327,14 @@ export default function ProfileForm() {
                                 </Button>
                                 <ArrowUpNarrowWide className="cursor-pointer" />
                             </div>
-                            <section className="w-full flex flex-wrap justify-center md:justify-between items-center gap-3.5">
+                            <>
                                 <FormField
                                     control={form.control}
                                     name={"assignmentAudio"}
                                     render={({field}) => (
-                                        <FormItem className="space-y-1 w-full md:w-[48%]">
+                                        <FormItem className="space-y-1">
                                             <FormLabel></FormLabel>
-                                            <FormControl className="">
+                                            <FormControl>
                                                 <>
                                                     <input
                                                         type="file"
@@ -321,7 +345,7 @@ export default function ProfileForm() {
                                                     />
                                                     <label
                                                         htmlFor="audio-file"
-                                                        className="w-full h-10 px-4 py-3 rounded-lg flex items-center cursor-pointer border border-[#C4AAA1] bg-[#F0EAE8]"
+                                                        className="w-52 h-10 px-4 py-3 rounded-lg flex items-center cursor-pointer border border-[#C4AAA1] bg-[#F0EAE8]"
                                                     >
                                                         {field.value instanceof File
                                                             ? field.value.name
@@ -340,7 +364,7 @@ export default function ProfileForm() {
                                     control={form.control}
                                     name="assignmentImage"
                                     render={({field}) => (
-                                        <FormItem className="space-y-1 w-full md:w-[48%]">
+                                        <FormItem className="space-y-1">
                                             <FormLabel></FormLabel>
                                             <FormControl>
                                                 <>
@@ -353,12 +377,12 @@ export default function ProfileForm() {
                                                     />
                                                     <label
                                                         htmlFor="assignment-image"
-                                                        className="w-full h-10 px-4 py-3 rounded-lg flex items-center cursor-pointer border border-[#C4AAA1] bg-[#F0EAE8]"
+                                                        className="w-52 h-10 px-4 py-3 rounded-lg flex items-center cursor-pointer border border-[#C4AAA1] bg-[#F0EAE8]"
                                                     >
                                                         {field.value instanceof File
                                                             ? field.value.name
                                                             : <span className="text-sm flex gap-4 items-center text-[#1E1E1E]">
-                                                                <Image width={16} height={16} color={"#662F1B"} />
+                                                                <Image width={16} height={16} color={"#662F1B"} aria-label="Image icon" />
                                                                 Image
                                                               </span>}
                                                     </label>
@@ -372,7 +396,7 @@ export default function ProfileForm() {
                                 <FormField
                                     control={form.control}
                                     name="voiceNote"
-                                    render={({  }) => (
+                                    render={() => (
                                         <VoiceNoteInput
                                             onVoiceNoteRecorded={(audioFile) => form.setValue("voiceNote", audioFile)}
                                         />
@@ -383,7 +407,7 @@ export default function ProfileForm() {
                                     control={form.control}
                                     name="courseVideo"
                                     render={({ field }) => (
-                                        <FormItem className="space-y-1 w-full md:w-[48%]">
+                                        <FormItem className="space-y-1">
                                             <FormLabel></FormLabel>
                                             <FormControl>
                                                 <>
@@ -396,7 +420,7 @@ export default function ProfileForm() {
                                                     />
                                                     <label
                                                         htmlFor="course-video"
-                                                        className="w-full h-10 px-4 py-3 rounded-lg flex items-center cursor-pointer border border-[#C4AAA1] bg-[#F0EAE8] text-sm"
+                                                        className="w-52 h-10 px-4 py-3 rounded-lg flex items-center cursor-pointer border border-[#C4AAA1] bg-[#F0EAE8] text-sm"
                                                     >
                                                         {
                                                             field.value instanceof File
@@ -413,7 +437,7 @@ export default function ProfileForm() {
                                         </FormItem>
                                     )}
                                 />
-                            </section>
+                            </>
                             <div className="flex justify-between">
                                 <Button
                                     onClick={prev}
@@ -436,3 +460,5 @@ export default function ProfileForm() {
         </section>
     );
 }
+
+export default ProfileForm
