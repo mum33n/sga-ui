@@ -11,13 +11,24 @@ const config: Config = {
   	extend: {
 		backgroundImage: {
 			'custom-image': "url('/carImage.png')",
+			'student-mobile': "url('/main.png')",
+			'footerBackground': "url('/Rectangle 52.png')",
 		},
 	  	fontFamily: {
 		  	sans: ['var(--font-cabin)', 'sans-serif'],
-	  	},
-		// backgroundImage: {
-		//   	'custom-image': "url('/carImage.png')"
-		// },
+			montserrat: ['Montserrat', 'sans-serif'],
+		},
+		animation: {
+			marquee: 'marquee 20s linear infinite', // Define the animation
+			// marquee2: 'marquee 23s linear infinite', // Define the animation
+			// marquee3: 'marquee 22s linear infinite', // Define the animation
+		},
+		keyframes: {
+			marquee: {
+				'0%': { transform: 'translateX(100%)' }, // Start from the right
+				'100%': { transform: 'translateX(-100%)' }, // Move to the left
+			},
+		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const cabin = Cabin({
   subsets: ['latin'],
-  weight: ['400', '500', '600', '700'], // Specify the weights you need
+  weight: ['400', '500', '600', '700', ], // Specify the weights you need
 });
 
 export default function RootLayout({
