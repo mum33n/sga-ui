@@ -59,10 +59,10 @@ const StudentStorySlide = () => {
                             <Image
                                 alt="Image"
                                 src={studentStories[active].image}
-                                className="rounded-full w-[64px] md:w-[120px] h-fit mt-8"
+                                className="rounded-full w-[64px] md:w-[120px] lg:w-[212px] h-fit mt-8"
                             />
                             <div className="flex flex-col gap-3.5 items-start w-[270px] md:w-full h-fit">
-                                <p className="text[#401A0C] md:text-2xl md:mb-5 font-semibold text-[#401A0C]">{studentStories[active].name}</p>
+                                <p className="text[#401A0C] md:text-2xl lg:text-3xl md:mb-5 font-semibold text-[#401A0C]">{studentStories[active].name}</p>
                                 <div className="relative flex flex-col gap-3.5 items-center">
                                 <span className="absolute -left-3.5 md:-left-7 md:-top-4">
                                     <Image
@@ -71,7 +71,7 @@ const StudentStorySlide = () => {
                                         className="w-[54px] h-[42px]"
                                     />
                                 </span>
-                                    <span className="text-start flex font-medium text-[10px] md:text-[16px] text-[#401A0C80]">
+                                    <span className="text-start flex font-medium text-[10px] md:text-[16px] lg:text-2xl lg:w-[885px] text-[#401A0C80]">
                                     {studentStories[active].story}
                                 </span>
 
@@ -88,7 +88,7 @@ const StudentStorySlide = () => {
                         }
                     </div>
 
-                <div className="flex gap-2 justify-end pr-5">
+                <div className="flex gap-2 justify-end pr-5 lg:pr-[105px]">
                     <ChevronLeft onClick={handlePrevious} size={30} className="cursor-pointer bg-[#602712] rounded-lg text-white"/>
                     <ChevronRight onClick={handleNext} size={30} className="cursor-pointer bg-[#602712] rounded-lg text-white"/>
                 </div>

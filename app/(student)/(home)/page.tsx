@@ -100,35 +100,40 @@ const Home = () => {
   return (
       <>
           <main className="font-montserrat ">
-              <div className="bg-student-mobile h-[200px] md:h-[366px] w-screen bg-cover bg-no-repeat bg-left-top flex flex-col justify-center items-center gap-6 mb-16">
-                  <p className="text-2xl md:text-[40px] text-white font-bold text-center md:leading-[50px]">
-                      <span className="text-[#D1831F] font-black">Learn </span>
+              <div className="bg-student-mobile h-[200px] md:h-[366px] lg:h-[631px] w-screen bg-cover bg-no-repeat bg-left-top flex flex-col justify-center items-center gap-6 mb-16">
+                  <p className="text-2xl md:text-[40px] lg:text-[60px] text-white font-bold text-center md:leading-[50px] lg:leading-[70px]">
+                      <span className="text-[#D1831F] lg:text-[65px] font-black">Learn </span>
                       Guitar With <br/>
                       Spicy Guitar Academy
                   </p>
                   <div
-                      className="bg-[#E89222] px-4 h-10 rounded-lg text-white flex items-center justify-center font-semibold text-base">Your
+                      className="bg-[#E89222] px-4 lg:px-6 lg:py-3 h-10 rounded-lg text-white flex items-center justify-center font-semibold text-base lg:text-2xl">Your
                       Guitar Journey Starts Here!
                   </div>
               </div>
 
               <div className="mb-16 md:mb-[77px]">
-                  <p className="text-[#2B1108] font-semibold text-[20px] text-center mb-12">JOIN US FOR FREE</p>
-                  <div className="flex px-4 md:px-8 w-screen justify-between text-[#636363] mb-8">
-                      {
-                          numCount.map((item, index) => (
-                              <div key={index} className="font-semibold text-xs md:text-xl flex flex-col items-center gap-1">
-                                  <span>{item.title}</span>
-                                  <span>{item.count}</span>
-                              </div>
-                          ))
-                      }
+                  <p className="text-[#2B1108] font-semibold text-[20px] lg:text-3xl text-center mb-12">JOIN US FOR FREE</p>
+                  <div className="flex justify-center overflow-x-hidden">
+                      <div
+                          className="flex px-4 md:px-8 w-screen lg:w-[794px] justify-between text-[#636363] mb-8 lg:mb-12">
+                          {
+                              numCount.map((item, index) => (
+                                  <div key={index}
+                                       className="font-semibold text-xs md:text-xl lg:text-2xl flex flex-col items-center gap-1">
+                                      <span>{item.title}</span>
+                                      <span>{item.count}</span>
+                                  </div>
+                              ))
+                          }
+                      </div>
                   </div>
+
                   <HomeCarousel/>
                   <div className="flex justify-center items-center mt-6">
                       <div className="w-screen md:w-[567px] flex px-4 relative items-center">
                           <div
-                              className="w-full h-10 border-2 border-[#D1831F] rounded-full flex items-center pl-2.5 gap-2">
+                              className="w-full h-10 border-2 border-[#D1831F] rounded-full lg:rounded-2xl flex items-center pl-2.5 gap-2">
                               <FaYoutube
                                   color={"#FF0101"}
                                   width={18}
@@ -137,38 +142,36 @@ const Home = () => {
                               <span className="font-semibold text-[10px] md:text-[14px]">15K subscribers on YOUTUBE</span>
                           </div>
                           <div
-                              className="h-9 w-[115px] md:w-[223px] rounded-full bg-[#D1831F] absolute right-4 top-0.5 text-white font-semibold text-[10px] md:text-[14px] flex items-center justify-center">
+                              className="h-9 w-[115px] md:w-[223px] rounded-full lg:rounded-2xl bg-[#D1831F] absolute right-4 top-0.5 text-white font-semibold text-[10px] md:text-[14px] flex items-center justify-center">
                               FREE Guitar Lessons
                           </div>
                       </div>
                   </div>
               </div>
 
-              <p className="text-[#2B1108] font-semibold text-[20px] text-center mb-2">OUR MISSION</p>
+              <p className="text-[#2B1108] font-semibold text-[20px] lg:text-3xl text-center mb-2">OUR MISSION</p>
               <div className="w-screen relative bg-[#2B1108] text-white pt-4 ">
-                  <div className="pl-[18px] md:px-[55px] relative">
+                  <div className="pl-[18px] md:px-[55px] lg:pl-[67px] relative">
                       <div className="flex flex-col gap-3.5 md:pt-6">
-                          <span className="w-[255px] md:w-[480px] font-semibold text-base md:text-xl">Spicy Guitar Academy Is Aimed At Guiding Beginners To Fulfill Their Dream Of Becoming Professional Guitar Players.</span>
-                          <span
-                              className="text-[#D1831F] font-semibold text-base md:text-xl">- Guitarism, Igniting Creativity.</span>
-                          <span>
-                              <Button
-                                  className="font-semibold text-base bg-[#D1831F] rounded-full">Create Account</Button>
+                          <span className="w-[255px] md:w-[480px] lg:w-[550px] font-semibold text-base md:text-xl lg:text-2xl">Spicy Guitar Academy Is Aimed At Guiding Beginners To Fulfill Their Dream Of Becoming Professional Guitar Players.</span>
+                          <span className="text-[#D1831F] font-semibold text-base md:text-xl lg:text-2xl lg:mt-5">- Guitarism, Igniting Creativity.</span>
+                          <span className="lg:mt-12">
+                              <Button className="font-semibold text-base lg:text-lg bg-[#D1831F] rounded-full">Create Account</Button>
                           </span>
                       </div>
                       <Image
                           src={rightColumn}
                           alt="image"
-                          className="absolute right-5 md:right-10 top-40 md:-top-24"
+                          className="absolute lg:w-[373px] right-5 md:right-10 lg:right-20 top-40 md:-top-24 lg:-top-56"
                       />
                   </div>
 
                   <div className="flex justify-center">
                       <div
-                          className="w-screen md:w-[680px] bg-white mt-[300px] md:mt-[59px] rounded-2xl p-9 flex flex-col items-center">
-                          <p className="text-[#2B1108] font-bold text-[20px] md:text-[28px] text-center mb-6 md:pt-4">HOW WE SUPPORT
-                              YOUR <br/> LEARNING JOURNEY</p>
-                          <div className="flex flex-col md:justify-center md:flex-row md:flex-wrap md:px-[50px]">
+                          className="w-screen md:w-[680px] lg:w-[1232px] bg-white mt-[300px] md:mt-[59px] rounded-2xl p-9 flex flex-col items-center">
+                          <p className="text-[#2B1108] font-bold text-[20px] md:text-[28px] lg:text-3xl leading-10 text-center mb-6 md:pt-4">HOW WE SUPPORT
+                              YOUR <br className="lg:hidden" /> LEARNING JOURNEY</p>
+                          <div className="flex flex-col lg:w-full lg:justify-between md:justify-center md:flex-row md:flex-wrap md:px-[50px]">
                               {
                                   supportComp.map((item, index) => (
                                       <div key={index} className="flex flex-col items-center ">
@@ -176,6 +179,7 @@ const Home = () => {
                                               alt="image"
                                               src={item.image}
                                               width={245}
+                                              className="lg:h-[170px]"
                                           />
                                           <p className="text-[#2B1108] font-semibold text-lg text-center mb-2">{item.description}</p>
                                       </div>
@@ -192,37 +196,40 @@ const Home = () => {
                               <span className="text-[#2B1108]">OVERCOME YOUR</span>
                               <span className="py-3 px-4 bg-[#2B1108] rounded-full md:rounded-2xl text-white">GUITAR STRUGGLES</span>
                           </div>
-                          <p className="px-4 font-semibold text-lg md:text-[28px] md:leading-10 w-[] text-[#401A0C] text-center mb-11">
-                              You&#39;re
-                              <span className="text-[#F7B500]"> never alone </span>
-                              on your guitar journey. Our dedicated team of instructors is on standby to help you
-                              overcome trouble spots.
-                          </p>
-                          <div className="px-4 mb-2.5 md:flex md:justify-center">
-                              <Image
-                                  alt="image"
-                                  src={rightCol}
-                                  className="md:hidden"
-                              />
-                              <Image
-                                  alt="image"
-                                  src={rightCol1}
-                                  className="hidden md:block"
-                              />
+                          <div className="flex flex-col lg:flex-row">
+                              <p className="px-4 lg:pl-[95px] font-semibold text-lg md:text-[28px] lg:text-3xl md:leading-10 lg:w-[538px] lg:text-start text-[#401A0C] text-center mb-11">
+                                  You&#39;re
+                                  <span className="text-[#F7B500]"> never alone </span>
+                                  on your guitar journey. Our dedicated team of instructors is on standby to help you
+                                  overcome trouble spots.
+                              </p>
+                              <div className="px-4 lg:pr-[104px] mb-2.5 md:flex md:justify-center">
+                                  <Image
+                                      alt="image"
+                                      src={rightCol}
+                                      className="md:hidden"
+                                  />
+                                  <Image
+                                      alt="image"
+                                      src={rightCol1}
+                                      className="hidden md:block"
+                                  />
+                              </div>
                           </div>
-                          <Button className="rounded-full bg-[#D1831F] md:mt-9">Join Spicy Guitar Academy for FREE</Button>
+
+                          <Button className="rounded-full bg-[#D1831F] md:mt-9 lg:text-lg">Join Spicy Guitar Academy for
+                              FREE</Button>
                       </div>
 
                       <div className="px-4 mb-16 md:flex md:flex-col items-center">
-                          <div className="font-semibold text-base md:text-3xl flex gap-2 md:gap-4 items-center justify-center mb-6">
+                          <div className="font-semibold text-base md:text-3xl flex gap-2 md:gap-4 items-center justify-center mb-6 lg:mb-9">
                               <span className="text-[#000000]">Lessons For</span>
-                              <span
-                                  className="text-white py-1.5 px-2.5 bg-[#2B1108] rounded-full md:rounded-2xl">All Skills Level</span>
+                              <span className="text-white py-1.5 px-2.5 bg-[#2B1108] rounded-full md:rounded-2xl">All Skills Level</span>
                           </div>
-                          <div className="flex md:w-[485px] md:items-center flex-wrap gap-3 justify-center">
+                          <div className="flex md:w-[485px] lg:w-full md:items-center flex-wrap gap-3 lg:gap-10 justify-center">
                               {lessonCarousel.map((item, index) => (
                                   <div key={index}
-                                       className={`w-[138px] md:w-[222px] h-[110px] md:h-[176px] bg-custom-image bg-cover bg-no-repeat rounded-lg`}
+                                       className={`w-[138px] md:w-[222px] lg:w-[275px] h-[110px] md:h-[176px] bg-custom-image bg-cover bg-no-repeat rounded-lg`}
                                        style={{
                                            backgroundColor: item.color,
                                            backgroundPosition: "-120% -110%",
@@ -241,15 +248,15 @@ const Home = () => {
                       <StudentStorySlide/>
                       <AboutSomeone/>
                   </div>
-                  <div className="w-screen bg-footerBackground md:bg-footerBackground2 absolute mt-[100px] pt-[61px] pb-[20px] pl-4 md:pl-12 flex items-center md:flex md:justify-between">
-                      <div className="flex gap-6 md:gap-[97px]">
+                  <div className="w-screen lg:h-[235px] bg-footerBackground md:bg-footerBackground2 bg-no-repeat bg-cover absolute mt-[100px] pt-[61px] pb-[20px] pl-4 md:pl-12 lg:pl-[104px] flex items-center justify-between">
+                      <div className="flex gap-6 md:gap-[97px] lg:gap-[132px]">
                           <Image
                               alt="logo"
                               src={logo1}
                               // width={40}
-                              className="w-[40px] md:w-[58px]"
+                              className="w-[40px] md:w-[58px] lg:w-[103px]"
                           />
-                          <section className="flex flex-wrap gap-x-6 gap-y-2 md:w-full">
+                          <section className="flex flex-wrap justify-between lg:items-center pr-7 md:pr-14 gap-x-6 gap-y-2 w-full">
                               <div className="md:mr-[119px]">
                                   <p className="font-semibold text-[10px] mb-2 text-black">Stay connected</p>
                                   <div className="flex gap-3.5">
@@ -258,7 +265,7 @@ const Home = () => {
                                       <Youtube className="cursor-pointer w-5 md:w-7 h-7" fill="#602712" color="#F0EAE8" />
                                   </div>
                               </div>
-                              <div>
+                              <div className="lg:pr-[95px]">
                                   <p className="font-semibold text-[10px] mb-2 text-black md:hidden">Mobile apps</p>
                                   <p className="font-bold text-[18px] mb-2 text-black hidden md:block">Get our mobile apps</p>
                                   <div className="flex flex-col md:flex-row gap-1.5">
