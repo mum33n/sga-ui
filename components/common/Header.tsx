@@ -10,8 +10,8 @@ import {useState} from "react";
 const Header = () => {
     const [active, setActive] = useState(false)
   return (
-    <section className="bg-[#602712] flex items-center justify-between place-items-center px-4 md:px-12 shadow-md h-14 relative">
-      <div className="flex gap-20">
+    <section className="w-screen bg-[#602712] flex items-center justify-between place-items-center px-4 md:px-7 shadow-md h-14 relative">
+      <div className="flex gap-10">
         <Image
           src={logo1}
           alt="Logo" 
@@ -23,11 +23,11 @@ const Header = () => {
         <NavMenu />
       </div>
 
-      <div className="hidden md:flex gap-6 pr-8 items-center">
-        <Button className="bg-[#E89222] hover:bg-[#cb801e] px-8 py-7 text-[20px] font-semibold">Join now</Button>
-        <Button className="font-semibold bg-transparent hover:bg-transparent text-[20px] hover:underline underline-offset-[6px] decoration-2">Login</Button>
+      <div className="hidden md:flex gap-0 pr-8 md:pr-0 items-center">
+        <Button className="bg-[#E89222] hover:bg-[#cb801e] px-4 py-4 text-base font-medium">Join now</Button>
+        <Button className="font-semibold bg-transparent hover:bg-transparent text-base hover:underline underline-offset-[6px] decoration-2">Login</Button>
       </div>
-      <Menu color={'white'} onClick={() => {
+      <Menu className="block md:hidden" color={'white'} onClick={() => {
           setActive(!active)
           console.log(active)
       }} />

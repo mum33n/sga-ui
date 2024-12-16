@@ -122,7 +122,7 @@ const exploreComp = {
 
 export function SideBar({active, setActive}) {
     return (
-        <section className={`${!active && "hidden"} ${active && "w-screen h-screen flex absolute top-0 bottom-0 left-0 right-0"} bg-amber-600 p-5 flex flex-col gap-16`}>
+        <section className={`${!active && "hidden"} ${active && "w-screen h-screen flex absolute top-0 bottom-0 left-0 right-0"} bg-amber-600 p-5 flex-col gap-16`}>
             <X onClick={() => setActive(!active)} />
             <NavigationMenu className="block md:hidden">
                 <NavigationMenuList className="flex flex-col">

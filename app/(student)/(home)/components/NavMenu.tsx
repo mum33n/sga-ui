@@ -115,7 +115,7 @@ export function NavMenu() {
         <NavigationMenu className="hidden md:flex">
             <NavigationMenuList>
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger className="font-semibold bg-[#602712] text-white text-lg">Explore</NavigationMenuTrigger>
+                    <NavigationMenuTrigger className="font-semibold bg-[#602712] text-white text-base">Explore</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid gap-[124px] p-4 lg:pr-[120px] h-[388px] lg:grid-cols-[.75fr_1fr]">
                             <li className="row-span-3">

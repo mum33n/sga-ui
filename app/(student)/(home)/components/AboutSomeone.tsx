@@ -3,13 +3,13 @@ import React from 'react'
 const AboutSomeone = () => {
     return (
         <section>
-            <h1 className="text-center text-[#401A0C] font-semibold text-xl mt-5 mb-[35px]">ABOUT OC <br
+            <h1 className="text-center text-[#401A0C] font-semibold text-xl md:text-3xl mt-5 mb-[35px]">ABOUT OC <br
                 className="md:hidden"/> OMOFUMA</h1>
             <div className="overflow-x-hidden">
-                <p className="whitespace-nowrap w-screen font-semibold text-base animate-marquee mb-[37px] italic">I am
+                <p className="whitespace-nowrap w-screen font-semibold text-base md:text-2xl animate-marquee mb-[37px] italic">I am
                     a <span className="text-[#E89222]">  teacher </span>| guitarist | songwriter | artist | family man.
                 </p>
-                <p className="font-normal text-xs text-end animate-marquee pl-[50px] w-[660px]">I started Spicy Guitar Academy in 2016 -
+                <p className="font-normal text-xs md:text-base text-end animate-marquee pl-[50px] w-[660px]">I started Spicy Guitar Academy in 2016 -
                     but began teaching way before that.<br className="hidden"/>I carefully design my courses to help you
                     make the best out of your guitar <br className="hidden"/> time! My lessons feel like private lessons
                     and are just as effective. Some of <br className="hidden"/> them are free. Teaching the world how to

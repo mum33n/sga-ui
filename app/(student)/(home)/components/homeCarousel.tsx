@@ -14,7 +14,7 @@ import {
 import music from "@/public/music.jpg"
 import music1 from "@/public/music1.jpg"
 import music2 from "@/public/music2.jpg"
-import music3 from "@/public/music3.jpeg"
+import music3 from "@/public/guitarbg.png"
 import Image from "next/image";
 import {GiPlainCircle} from "react-icons/gi";
 
@@ -24,7 +24,8 @@ const images = [music, music1, music2, music3]
 export function HomeCarousel() {
     const [api, setApi] = React.useState<CarouselApi>()
     const [current, setCurrent] = React.useState(0)
-    const [count, setCount] = React.useState(0)
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const [_, setCount] = React.useState(0)
 
     React.useEffect(() => {
         if (!api) {
@@ -40,13 +41,13 @@ export function HomeCarousel() {
     }, [api])
 
     return (
-        <div className="mx-auto max-w-xs px-4 overflow-x-hidden flex flex-col items-center">
-            <Carousel setApi={setApi} className="w-full max-w-xs">
+        <div className="mx-auto max-w-xs md:w-screen md:max-w-screen-lg px-4 overflow-x-hidden flex flex-col items-center">
+            <Carousel setApi={setApi} className="w-full max-w-xs md:max-w-[620px]">
                 <CarouselContent>
                     {images.map((image, index) => (
                         <CarouselItem key={index}>
                             <Card>
-                                <CardContent className="flex w-[280px] h-[176px] items-center justify-center">
+                                <CardContent className="flex w-[280px] md:w-[620px] h-[156px] md:h-[320px] items-center justify-center">
                                     <Image
                                         alt="image"
                                         src={image}
@@ -67,7 +68,7 @@ export function HomeCarousel() {
                     images.map((_, index) => (
                         <GiPlainCircle
                             key={index}
-                            className={`cursor-pointer ${current - 1 === index ? "text-[#401A0C]" : "text-[#D9D9D9]"}`}
+                            className={`cursor-pointer ${current - 1 === index ? "text-[#401A0C]" : "text-[#D9D9D9]"} transition-all duration-700`}
                             size={10}
                         />
                     ))

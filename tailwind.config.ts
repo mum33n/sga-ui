@@ -13,6 +13,7 @@ const config: Config = {
 			'custom-image': "url('/carImage.png')",
 			'student-mobile': "url('/main.png')",
 			'footerBackground': "url('/Rectangle 52.png')",
+			'footerBackground2': "url('/Rectangle 52 (1).png')",
 		},
 	  	fontFamily: {
 		  	sans: ['var(--font-cabin)', 'sans-serif'],

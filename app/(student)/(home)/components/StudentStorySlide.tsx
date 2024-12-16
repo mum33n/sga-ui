@@ -52,22 +52,26 @@ const StudentStorySlide = () => {
 
     return (
         <>
-            <section className="pl-5 bg-[#F0EAE8] py-7 pr-4 mb-[62px]">
-                <h3 className="font-semibold text-base text-[#401A0C] text-start mb-5">Students success stories</h3>
+            <section className="pl-5 md:px-[49px] bg-[#F0EAE8] py-7 pr-4 mb-[62px]">
+                <h3 className="font-semibold text-base md:text-3xl text-[#401A0C] text-start mb-5">Students success stories</h3>
                     <div className="flex flex-nowrap overflow-x-hidden ">
-                        <div className="flex gap-5 w-screen">
+                        <div className="flex gap-5 md:gap-12 w-screen">
                             <Image
                                 alt="Image"
                                 src={studentStories[active].image}
-                                className="rounded-full w-[64px] h-fit mt-8"
+                                className="rounded-full w-[64px] md:w-[120px] h-fit mt-8"
                             />
-                            <div className="flex flex-col gap-3.5 items-start w-[270px] h-fit">
-                                <p className="text[#401A0C]">{studentStories[active].name}</p>
+                            <div className="flex flex-col gap-3.5 items-start w-[270px] md:w-full h-fit">
+                                <p className="text[#401A0C] md:text-2xl md:mb-5 font-semibold text-[#401A0C]">{studentStories[active].name}</p>
                                 <div className="relative flex flex-col gap-3.5 items-center">
-                                <span className="absolute -left-3.5">
-                                    <Image alt="apos" src={apos}/>
+                                <span className="absolute -left-3.5 md:-left-7 md:-top-4">
+                                    <Image
+                                        alt="apos"
+                                        src={apos}
+                                        className="w-[54px] h-[42px]"
+                                    />
                                 </span>
-                                    <span className="text-start flex font-medium text-[10px] text-[#401A0C80]">
+                                    <span className="text-start flex font-medium text-[10px] md:text-[16px] text-[#401A0C80]">
                                     {studentStories[active].story}
                                 </span>
 
@@ -75,18 +79,18 @@ const StudentStorySlide = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex justify-center mt-3.5 mb-5 gap-2">
+                    <div className="flex justify-center mt-3.5 mb-5 gap-2 tra">
                         {
                             studentStories.map((_, index) => (
                                 <div key={index}
-                                     className={`w-1.5 h-1.5 rounded-full ${active === index ? "bg-[#401A0C]" : "bg-[#D9D9D9]"}`}/>
+                                     className={`w-1.5 md:w-2.5 h-1.5 md:h-2.5 rounded-full ${active === index ? "bg-[#401A0C]" : "bg-[#D9D9D9]"}`}/>
                             ))
                         }
                     </div>
 
-                <div className="flex justify-end pr-5">
-                    <ChevronLeft onClick={handlePrevious} className="cursor-pointer"/>
-                    <ChevronRight onClick={handleNext} className="cursor-pointer"/>
+                <div className="flex gap-2 justify-end pr-5">
+                    <ChevronLeft onClick={handlePrevious} size={30} className="cursor-pointer bg-[#602712] rounded-lg text-white"/>
+                    <ChevronRight onClick={handleNext} size={30} className="cursor-pointer bg-[#602712] rounded-lg text-white"/>
                 </div>
             </section>
         </>
