@@ -110,9 +110,9 @@ const exploreComp = {
     ]
 }
 
-export function NavMenu() {
+export function NavMenu({signedIn = false}) {
     return (
-        <NavigationMenu className="hidden md:flex">
+        <NavigationMenu className="hidden md:flex font-inter">
             <NavigationMenuList>
                 <NavigationMenuItem>
                     <NavigationMenuTrigger className="font-semibold bg-[#602712] text-white text-base">Explore</NavigationMenuTrigger>
@@ -174,23 +174,30 @@ export function NavMenu() {
                     </NavigationMenuContent>
                 </NavigationMenuItem>
 
-                <NavigationMenuItem>
-                    <NavigationMenuTrigger className="font-semibold bg-[#602712] text-white text-lg">About</NavigationMenuTrigger>
-                    <NavigationMenuContent>
-                        <ul className="flex flex-col w-[400px] gap-6 pr-[137px] p-4 md:w-[500px] lg:w-[700px] ">
-                            {aboutComp.map((component) => (
-                                <ListItem
-                                    key={component.title}
-                                    icon={component.icon}
-                                    title={component.title}
-                                    href={component.href}
-                                >
-                                    {component.description}
-                                </ListItem>
-                            ))}
-                        </ul>
-                    </NavigationMenuContent>
-                </NavigationMenuItem>
+                {
+                    signedIn && (
+                        <>
+                            <NavigationMenuItem>
+                                <NavigationMenuTrigger className="font-semibold bg-[#602712] text-white text-lg">About</NavigationMenuTrigger>
+                                <NavigationMenuContent>
+                                    <ul className="flex flex-col w-[400px] gap-6 pr-[137px] p-4 md:w-[500px] lg:w-[700px] ">
+                                        {aboutComp.map((component) => (
+                                            <ListItem
+                                                key={component.title}
+                                                icon={component.icon}
+                                                title={component.title}
+                                                href={component.href}
+                                            >
+                                                {component.description}
+                                            </ListItem>
+                                        ))}
+                                    </ul>
+                                </NavigationMenuContent>
+                            </NavigationMenuItem>
+                        </>
+                    )
+                }
+
 
             </NavigationMenuList>
         </NavigationMenu>

@@ -14,10 +14,13 @@ const config: Config = {
 			'student-mobile': "url('/main.png')",
 			'footerBackground': "url('/Rectangle 52.png')",
 			'footerBackground2': "url('/Rectangle 52 (1).png')",
+			'a': "url('/a.png')",
 		},
 	  	fontFamily: {
 		  	sans: ['var(--font-cabin)', 'sans-serif'],
 			montserrat: ['Montserrat', 'sans-serif'],
+			inter: ['Inter', 'sans-serif'],
+			poppins: ['Poppins', 'sans-serif'],
 		},
 		animation: {
 			marquee: 'marquee 20s linear infinite', // Define the animation
