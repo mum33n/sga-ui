@@ -7,7 +7,7 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs";
-import React, { useState } from "react";
+import React, {useEffect, useState} from "react";
 
 type Course = {
     title: string;
@@ -21,10 +21,17 @@ type CoursesTabsProps = {
 };
 
 export function StudentTabs({ courses }: CoursesTabsProps) {
-    const [activeButton, setActiveButton] = useState<number | null>(0)
+    const [activeButton, setActiveButton] = useState<number | null>(null)
+    useEffect(() => {
+        const savedButton = localStorage.getItem('activeButton')
+        if (savedButton !== null){
+            setActiveButton(parseInt(savedButton, 10))
+        }
+    }, []);
 
     const handleChange = (index: number) => {
         setActiveButton(index);
+        localStorage.setItem("activeButton", index.toString())
     };
 
     return (

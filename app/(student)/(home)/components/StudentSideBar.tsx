@@ -1,4 +1,5 @@
-import React from 'react'
+'use client';
+import React, {useEffect, useState} from 'react'
 import {
     BookOpen,
     CalendarPlus2,
@@ -68,12 +69,29 @@ const sideBar = [
 ]
 
 const StudentSideBar = () => {
+    const [activeMenu, setActiveMenu] = useState<number | null>(null);
+
+    useEffect(() => {
+        const savedIndex = localStorage.getItem('activeMenu')
+        if (savedIndex !== null ){
+            setActiveMenu(parseInt(savedIndex, 10))
+        }
+    }, [])
+
+    const handleChange = (index:number) => {
+        setActiveMenu(index)
+        localStorage.setItem('activeMenu', index.toString())
+    }
+
     return (
         <section className="w-[295px] min-w-[295px] h-[788px] bg-white py-[20px] pl-[55px] pr-[20px] hidden lg:flex flex-col gap-4 border-r border-r-[#8B8B8BCC]">
             {
                 sideBar.map((sideBar, index) => (
+
                     <Link key={index} href={sideBar.link}>
-                        <div className="flex items-center gap-1 p-4 active:bg-[#1C1C1C0D] hover:bg-[#1C1C1C0D] hover:font-bold active:font-bold cursor-pointer rounded-2xl">
+                        <div
+                            onClick={() =>handleChange(index)}
+                            className={`flex items-center gap-1 p-4 active:bg-[#1C1C1C0D] hover:bg-[#1C1C1C0D] hover:font-bold active:font-bold cursor-pointer rounded-2xl ${activeMenu === index && "bg-[#1C1C1C0D]"}`}>
                             <span><ChevronRight size={20} color="#1C1C1C33"/></span>
                             <div className="flex gap-2 text-[#602712] items-center">
                                 <span>{sideBar.icon}</span>

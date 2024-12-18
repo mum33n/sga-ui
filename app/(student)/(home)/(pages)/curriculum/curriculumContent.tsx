@@ -268,7 +268,7 @@ export const Amateur = () => {
     return (
         <section className="mt-[51px]">
             <div className="flex justify-end mb-11">
-                <Button className="w-fit bg-[#602712]">Take this Category</Button>
+                <Button className="w-fit lg:px-9 bg-[#602712]">Take this Category</Button>
             </div>
             <section className="flex flex-col w-full gap-3.5">
                 {courses.map((course, index) => (
@@ -295,7 +295,7 @@ export const Intermediate = () => {
     return (
         <section className="mt-[51px]">
             <div className="flex justify-end mb-11">
-                <Button className="w-fit bg-[#602712]">Take this Category</Button>
+                <Button className="w-fit lg:px-9 bg-[#602712]">Take this Category</Button>
             </div>
             <section className="flex flex-col w-full gap-3.5">
                 {courses.map((course, index) => (
@@ -322,7 +322,7 @@ export const Advance = () => {
     return (
         <section className="mt-[51px]">
             <div className="flex justify-end mb-11">
-                <Button className="w-fit bg-[#602712]">Take this Category</Button>
+                <Button className="w-fit lg:px-9 bg-[#602712]">Take this Category</Button>
             </div>
             <section className="flex flex-col w-full gap-3.5">
                 {courses.map((course, index) => (
