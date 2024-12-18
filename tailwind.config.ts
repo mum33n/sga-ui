@@ -15,6 +15,8 @@ const config: Config = {
 			'footerBackground': "url('/Rectangle 52.png')",
 			'footerBackground2': "url('/Rectangle 52 (1).png')",
 			'a': "url('/a.png')",
+			'e': "url('/e.png')",
+			'maskGroup': "url('/Mask group.png')",
 		},
 	  	fontFamily: {
 		  	sans: ['var(--font-cabin)', 'sans-serif'],

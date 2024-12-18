@@ -2,6 +2,7 @@ import React from "react";
 import { Montserrat, Inter, Poppins } from 'next/font/google';
 import Header from "@/components/common/Header";
 import Footer from "@/app/(student)/(home)/components/Footer";
+import StudentSideBar from "@/app/(student)/(home)/components/StudentSideBar";
 
 const montserrat = Montserrat({
     subsets: ['latin'],
@@ -33,7 +34,10 @@ export default function RootLayout({
         >
         <body className="min-h-screen font-montserrat overflow-x-hidden">
             <Header />
-            {children}
+            <section className="flex bg-[#FFF8F0]">
+                <StudentSideBar />
+                {children}
+            </section>
             <Footer />
         </body>
         </html>

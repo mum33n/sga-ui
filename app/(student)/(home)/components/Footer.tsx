@@ -8,7 +8,7 @@ import applePlay from "@/public/apple-store-badge.png";
 const Footer = () => {
     return (
         <div
-            className="w-screen lg:h-[235px] bg-footerBackground md:bg-footerBackground2 bg-no-repeat bg-cover absolute mt-[100px] pt-[61px] pb-[20px] pl-4 md:pl-12 lg:pl-[104px] flex items-center justify-between">
+            className="w-screen lg:h-[235px] bg-footerBackground md:bg-footerBackground2 bg-[#FFF8F0] bg-no-repeat bg-cover pt-[61px] pb-[20px] pl-4 md:pl-12 lg:pl-[104px] flex items-center justify-between">
             <div className="flex gap-6 md:gap-[97px] lg:gap-[132px]">
                 <Image
                     alt="logo"
@@ -19,7 +19,8 @@ const Footer = () => {
                 <section
                     className="flex flex-wrap justify-between lg:items-center pr-7 md:pr-14 gap-x-6 gap-y-2 w-full">
                     <div className="md:mr-[119px]">
-                        <p className="font-semibold text-[10px] mb-2 text-black">Stay connected</p>
+                        <p className="font-semibold text-[10px] mb-2 text-black md:hidden">Stay connected</p>
+                        <p className="font-bold text-[18px] mb-2 text-black hidden md:block">Stay connected</p>
                         <div className="flex gap-3.5">
                             <Facebook className="cursor-pointer w-5 md:w-7 h-7" color="#602712" fill="#602712"/>
                             <Instagram className="cursor-pointer w-5 md:w-7 h-7" fill="#602712" color="#F0EAE8"/>

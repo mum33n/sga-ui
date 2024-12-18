@@ -113,7 +113,7 @@ const exploreComp = {
 export function NavMenu({signedIn = false}) {
     return (
         <NavigationMenu className="hidden md:flex font-inter">
-            <NavigationMenuList>
+            <NavigationMenuList className="lg:flex lg:gap-[30px]">
                 <NavigationMenuItem>
                     <NavigationMenuTrigger className="font-semibold bg-[#602712] text-white text-base">Explore</NavigationMenuTrigger>
                     <NavigationMenuContent>
@@ -197,8 +197,6 @@ export function NavMenu({signedIn = false}) {
                         </>
                     )
                 }
-
-
             </NavigationMenuList>
         </NavigationMenu>
     )

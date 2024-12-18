@@ -44,15 +44,14 @@ const Header = () => {
                         </section>
                     )
                  : (
-                        <section className="w-screen bg-[#602712] flex items-center place-items-center px-4 md:px-7 shadow-md h-14 relative">
-                            <Menu size={14} color="white" className="mr-[22px]" />
-                            <div className="flex gap-4 mr-[65px]">
+                        <section className="w-screen bg-[#602712] flex items-center lg:justify-between place-items-center px-4 md:px-7 shadow-md h-[110px] relative">
+                            <Menu size={14} color="white" className="mr-[22px] lg:hidden" />
+                            <div className="flex gap-4 mr-[65px] lg:mr-[117px]">
                                 <Image
                                     src={logo1}
                                     alt="Logo"
-                                    width={33}
-                                    height={37}
                                     priority
+                                    className="lg:mr-[92px] w-[33px] lg:w-[62px] h-[37px] lg:h-[73px]"
                                 />
 
                                 <NavMenu />
@@ -60,15 +59,15 @@ const Header = () => {
 
                             <div className="flex gap-8 items-center">
                                 <div className="relative flex items-center">
-                                    <input className="w-[223px] h-10 bg-[#FFF8F0BD] rounded-lg pl-10 placeholder:text-[#1C1C1C33] placeholder:text-lg" placeholder="Search"/>
+                                    <input className="w-[223px] lg:w-[462px] h-10 lg:h-[42px] bg-[#FFF8F0BD] rounded-lg pl-10 placeholder:text-[#1C1C1C33] placeholder:text-lg" placeholder="Search"/>
                                     <span className="absolute left-3 items-center text-lg text-[#1C1C1C33]">
                                         <Search />
                                     </span>
                                 </div>
                                 <Bell color="white" size={23} className="cursor-pointer" />
                             </div>
-                            <div className="hidden lg:block ml-[169]">
-                                <Image alt="image" src={nft} className="w-[73px] h-[73px] rounded-full" />
+                            <div className="hidden lg:block ml-[169px] cursor-pointer">
+                                <Image alt="image" src={nft} className="w-[63px] h-[63px] rounded-full" />
                             </div>
                         </section>
                     )
