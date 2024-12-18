@@ -7,7 +7,7 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 
 type Course = {
     title: string;
@@ -17,27 +17,30 @@ type Course = {
 };
 
 type CoursesTabsProps = {
-    courses: Course[];// Only an array of Course objects is allowed
+    courses: Course[]; // Only an array of Course objects is allowed
 };
 
 export function StudentTabs({ courses }: CoursesTabsProps) {
-    const [activeButton, setActiveButton] = useState<number | null>(null)
+    const [activeButton, setActiveButton] = useState<number>(0);
+
     useEffect(() => {
-        const savedButton = localStorage.getItem('activeButton')
-        if (savedButton !== null){
-            setActiveButton(parseInt(savedButton, 10))
+        const savedButton = localStorage.getItem("activeButton");
+        if (savedButton !== null) {
+            setActiveButton(parseInt(savedButton, 10));
         }
     }, []);
 
     const handleChange = (index: number) => {
         setActiveButton(index);
-        localStorage.setItem("activeButton", index.toString())
+        localStorage.setItem("activeButton", index.toString());
     };
 
     return (
         <>
-            <Tabs defaultValue={courses[0]?.title || ""} className="font-poppins overflow-x-hidden px-[6px]">
-                {/* Wrap TabsTrigger items in TabsList */}
+            <Tabs
+                value={courses[activeButton]?.title || courses[0]?.title} // Dynamically set tab based on activeButton
+                className="font-poppins overflow-x-hidden px-[6px]"
+            >
                 <TabsList className="flex items-center justify-center gap-6 w-full lg:w-[753px] overflow-x-auto no-scrollbar">
                     {courses.map((course, index) => (
                         <TabsTrigger
@@ -48,13 +51,8 @@ export function StudentTabs({ courses }: CoursesTabsProps) {
                                 activeButton === index && "bg-[#602712] font-semibold text-white"
                             }`}
                         >
-                            <span>
-                                {course.title}
-                            </span>
-                            {
-                                course.count && <span>({course?.count})</span>
-                            }
-
+                            <span>{course.title}</span>
+                            {course.count && <span>({course.count})</span>}
                         </TabsTrigger>
                     ))}
                 </TabsList>

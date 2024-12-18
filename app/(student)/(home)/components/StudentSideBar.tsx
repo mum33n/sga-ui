@@ -69,12 +69,14 @@ const sideBar = [
 ]
 
 const StudentSideBar = () => {
-    const [activeMenu, setActiveMenu] = useState<number | null>(null);
+    const [activeMenu, setActiveMenu] = useState<number | null>(0);
 
     useEffect(() => {
         const savedIndex = localStorage.getItem('activeMenu')
         if (savedIndex !== null ){
             setActiveMenu(parseInt(savedIndex, 10))
+        } else {
+            setActiveMenu(0)
         }
     }, [])
 
@@ -91,7 +93,7 @@ const StudentSideBar = () => {
                     <Link key={index} href={sideBar.link}>
                         <div
                             onClick={() =>handleChange(index)}
-                            className={`flex items-center gap-1 p-4 active:bg-[#1C1C1C0D] hover:bg-[#1C1C1C0D] hover:font-bold active:font-bold cursor-pointer rounded-2xl ${activeMenu === index && "bg-[#1C1C1C0D]"}`}>
+                            className={`flex items-center gap-1 p-4 active:bg-[#1C1C1C0D] hover:bg-[#1C1C1C0D] hover:font-bold active:font-bold cursor-pointer rounded-2xl ${activeMenu === index && "bg-[#1C1C1C0D] font-bold"}`}>
                             <span><ChevronRight size={20} color="#1C1C1C33"/></span>
                             <div className="flex gap-2 text-[#602712] items-center">
                                 <span>{sideBar.icon}</span>
