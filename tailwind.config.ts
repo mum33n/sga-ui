@@ -17,6 +17,10 @@ const config: Config = {
 			'a': "url('/a.png')",
 			'e': "url('/e.png')",
 			'maskGroup': "url('/Mask group.png')",
+			'maskGroup2': "url('/Mask group (1).png')",
+		},
+		boxShadow: {
+			custom: '0 0 8px 0 rgba(0, 0, 0, 0.2)', // Matches the settings in your screenshot
 		},
 	  	fontFamily: {
 		  	sans: ['var(--font-cabin)', 'sans-serif'],

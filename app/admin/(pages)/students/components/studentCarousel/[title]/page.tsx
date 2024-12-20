@@ -12,7 +12,7 @@ const CarouselItemPage = () => {
     const params = useParams();
     const { title } = params; // Get the dynamic `title` segment from the URL
 
-    console.log(params)
+    // console.log(params)
 
     const carouselItem = studentCarouselContent.find(
         (item) => item.id === title

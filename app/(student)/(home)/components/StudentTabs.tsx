@@ -18,9 +18,11 @@ type Course = {
 
 type CoursesTabsProps = {
     courses: Course[]; // Only an array of Course objects is allowed
+    onTabChangeAction?: (title: string) => void;
 };
 
-export function StudentTabs({ courses }: CoursesTabsProps) {
+
+export function StudentTabs({ courses, onTabChangeAction }: CoursesTabsProps) {
     const [activeButton, setActiveButton] = useState<number>(0);
 
     useEffect(() => {
@@ -32,6 +34,7 @@ export function StudentTabs({ courses }: CoursesTabsProps) {
 
     const handleChange = (index: number) => {
         setActiveButton(index);
+        onTabChangeAction(courses[index].title || "")
         localStorage.setItem("activeButton", index.toString());
     };
 
