@@ -16,7 +16,26 @@ export const courses = [
         level: "Beginner",
         unknownNumber: 3,
         duration: "01:08:55",
-        lessons: curriculumArray.slice(0, Math.ceil(curriculumArray.length/8))
+        lessons: [
+            {
+                id: 1,
+                image: b,
+                title: "Join our  whatsapp group",
+                description: "Zarflin wamble snoozetrop, kinkleblot flarbin doozlewhip. Gribbleflox zindlewump, prazzlequack flibbityplop dranzoodle. Worblesnack zizzlefrap, glimberwoosh snoodlepop krimbleflop. Frizzlewump, glorbitysnack, dringlewobble snoof.",
+                lessons: "16 Lessons",
+                level: "Beginner",
+                progress: 60,
+            },
+            {
+                id: 2,
+                image: c,
+                title: "Get your Free Course",
+                description: "Blibberflunk drozzlewhip, skreebop wuzzlenorf, crindleplunk zopadoodle. Jibberflop snarglequix, plizzlewharf drabblewoop. Frizzlekrimp zundleflip, whizzlepop gloopersnack, bringlefroop snoozlekrink.",
+                lessons: "6 Lessons",
+                level: "Amateur",
+                progress: 10,
+            },
+        ]
     },
     {
         id: 2,
@@ -27,7 +46,26 @@ export const courses = [
         level: "Amateur",
         unknownNumber: 3,
         duration: "01:08:55",
-        lessons: curriculumArray.slice(2, Math.ceil(curriculumArray.length/4)),
+        lessons: [
+            {
+                id: 1,
+                image: d,
+                title: "App Tour",
+                description: "Snizzlewump glimmerflap, dribblezink frozzleplunk, quibbletrap snoorblewoosh. Wizzlefrump krindlewhack, zopplegorp flibblemunch, glimberwhip snoozleflip",
+                lessons: "16 Lessons",
+                level: "Intermediate",
+                progress: 0,
+            },
+            {
+                id: 2,
+                image: music2,
+                title: "Get your Free Course",
+                description: "Flizzleworp drabblequack, snoozlefrink wibbleflap, kraznibble floobersnack. Twizzleflomp glibberplunk, snoorflekrip brizzlewop, zindlefrap snoodlewhack. Grozzleflip blizzlekrink, drumblepuff snoozlepop skizzlefrip",
+                lessons: "5 Lessons",
+                level: "Advance",
+                progress: 100,
+            },
+        ],
     },
     {
         id: 3,
@@ -314,5 +352,60 @@ export const courses = [
         unknownNumber: 3,
         duration: "01:08:55",
         lessons: curriculumArray.slice(0, Math.ceil(curriculumArray.length/8)),
+    },
+]
+
+
+export const coursess = [
+    {
+        id: 1,
+        image: b,
+        title: "Join our  whatsapp group",
+        description: "Zarflin wamble snoozetrop, kinkleblot flarbin doozlewhip. Gribbleflox zindlewump, prazzlequack flibbityplop dranzoodle. Worblesnack zizzlefrap, glimberwoosh snoodlepop krimbleflop. Frizzlewump, glorbitysnack, dringlewobble snoof.",
+        lessonsCount: "6 Lessons",
+        level: "Beginner",
+        unknownNumber: 3,
+        duration: "01:08:55",
+        lessons: [
+            {
+                id: 10,
+                image: quiz,
+                title: "Quiz",
+                description: "Womblefrizz snoodlequack, grizzleplunk dribberflap, snorflequib zopplefrink. Frizzleklap blooberwump, skindlewharp dribblezorb, snoozletrap glimberplop. Zogglefritz plizzleflamp, zindlekrimp snooflewhip, frizzletrap snargleflip",
+                lessons: "16 Lessons",
+                level: "Beginner",
+                progress: 10,
+            },
+            {
+                id: 20,
+                image: earTraining,
+                title: "Ear Training",
+                description: "Blorpfizzle whacklesnug, drabbleflonk snoofletrap, quizzleflop zindlewhack. Frabblenorp wizzleflick, glibblefroop zindlequack, snoodlefrimp dribblewomp. Wombleflip snarglequix, frizzlewhack blorplezorb, skizzleflap snozzlepuff.",
+                lessons: "16 Lessons",
+                level: "Intermediate",
+                progress: 10,
+            },
+        ]
+    },
+    {
+        id: 2,
+        image: c,
+        title: "Get your Free Course",
+        description: "Blibberflunk drozzlewhip, skreebop wuzzlenorf, crindleplunk zopadoodle. Jibberflop snarglequix, plizzlewharf drabblewoop. Frizzlekrimp zundleflip, whizzlepop gloopersnack, bringlefroop snoozlekrink.",
+        lessonsCount: "16 Lessons",
+        level: "Amateur",
+        unknownNumber: 3,
+        duration: "01:08:55",
+        lessons: [
+            {
+                id: 11,
+                image: d,
+                title: "App Tour",
+                description: "Snizzlewump glimmerflap, dribblezink frozzleplunk, quibbletrap snoorblewoosh. Wizzlefrump krindlewhack, zopplegorp flibblemunch, glimberwhip snoozleflip",
+                lessons: "16 Lessons",
+                level: "Intermediate",
+                progress: 0,
+            },
+        ],
     },
 ]
