@@ -45,7 +45,7 @@ const CoursePreviewPage = () => {
     }
 
     return (
-        <section className="w-full pt-[38px] pl-14 pr-[52px] font-poppins mb-[560px]">
+        <section className="w-full pt-[38px] pl-14 pr-[52px] font-poppins mb-[560px] lg:mb-[68px]">
             <h1 className="mb-[38px] text-[40px] text-[#602712] font-bold">Course Preview</h1>
             <Image
                 alt="Image"

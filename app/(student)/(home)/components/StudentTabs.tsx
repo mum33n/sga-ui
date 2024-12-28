@@ -44,7 +44,7 @@ export function StudentTabs({ courses, onTabChangeAction }: CoursesTabsProps) {
                 value={courses[activeButton]?.title || courses[0]?.title} // Dynamically set tab based on activeButton
                 className="font-poppins overflow-x-hidden px-[6px]"
             >
-                <TabsList className="flex items-center justify-center gap-6 w-full lg:w-[753px] overflow-x-auto no-scrollbar">
+                <TabsList className="flex items-center justify-center gap-6 w-full lg:max-w-[753px] overflow-x-auto no-scrollbar">
                     {courses.map((course, index) => (
                         <TabsTrigger
                             key={index}

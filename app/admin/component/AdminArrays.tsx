@@ -32,6 +32,7 @@ interface categoryCoursesItem {
 interface bunchButtItem {
     title: string;
     color: string;
+    count?: number
 }
 
 export const carouselArrays: AdminCarouselItem[] = [
@@ -70,7 +71,8 @@ export const carouselArrays: AdminCarouselItem[] = [
 export const bunchButtsArrays: bunchButtItem[] = [
     {
         title: 'Assignment',
-        color: '#AB8071'
+        color: '#AB8071',
+        count: 3,
     },
     {
         title: 'Questions',
@@ -78,11 +80,13 @@ export const bunchButtsArrays: bunchButtItem[] = [
     },
     {
         title: 'Support',
-        color: '#552514'
+        color: '#552514',
+        count: 3,
     },
     {
         title: 'Chat Forum',
-        color: '#3C2F2A'
+        color: '#3C2F2A',
+        count: 3,
     }
 ]
 

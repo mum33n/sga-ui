@@ -9,18 +9,17 @@ import Link from "next/link";
 
 const BuyCourseItem = () => {
     const params = useParams();
-    const { buyCourseId } = params;
+    const { freeCourseId } = params;
 
     const eachCourse = courses.find(
-        (item) => item.id === Number(buyCourseId)
+        (item) => item.id === Number(freeCourseId)
     );
-    console.log(params)
     if (!eachCourse) {
         return <div>Item not found</div>;
     }
 
     return (
-        <section className="w-full pt-9 pl-14 pr-[52px] font-poppins">
+        <section className="w-full pt-9 pl-4 pr-[12px] font-poppins">
             <BackButton/>
             <div className="mb-4 flex w-full justify-between items-center">
                 <h1 className="text-[40px] text-[#602712] font-bold">{eachCourse.title.slice(0, 18)}{eachCourse.title.length > 18 && "..."}</h1>
@@ -28,7 +27,7 @@ const BuyCourseItem = () => {
             </div>
             <section className="flex flex-col w-full gap-3.5">
                 {eachCourse.lessons.map((lesson, index) => (
-                    <Link key={index} href={`/buy-course/${eachCourse.id}/lessonPreview/${lesson.id}`}>
+                    <Link key={index} href={`/free-course/${eachCourse.id}/eachFreeLessonPage/${lesson.id}`}>
                         <div className="flex gap-6 w-full h-[169px] max-h-[169px] bg-white drop-shadow-md rounded-lg py-2 pl-2 pr-6 cursor-pointer">
                             <Image
                                 alt="image"

@@ -39,12 +39,12 @@ const sideBar = [
     {
         icon: <ListCollapse size={20} />,
         title: 'Free lessons',
-        link: "#",
+        link: "/free-lessons",
     },
     {
         icon: <SquareLibrary size={20} />,
         title: 'Free courses',
-        link: "#",
+        link: "/free-course",
     },
     {
         icon: <IoChatbubblesOutline size={20} />,
@@ -54,7 +54,7 @@ const sideBar = [
     {
         icon: <Coins size={20} />,
         title: 'Transactions',
-        link: "#",
+        link: "/transactions",
     },
     {
         icon: <CalendarPlus2 size={20} />,
@@ -64,7 +64,7 @@ const sideBar = [
     {
         icon: <FaPeopleGroup size={20} />,
         title: 'Support',
-        link: "#",
+        link: "/support",
     },
 ]
 

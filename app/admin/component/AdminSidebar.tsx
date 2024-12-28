@@ -1,21 +1,22 @@
 'use client';
 
-import React from 'react'
-import { FaUserCircle,  } from "react-icons/fa";
+import React from 'react';
+import { FaUserCircle } from "react-icons/fa";
 import { PiChartPieSliceFill, PiChatsCircle, PiStudentFill, PiNotebookDuotone, PiChalkboardTeacherLight } from "react-icons/pi";
 import { MdAssignmentAdd } from "react-icons/md";
-import {ArrowLeftRight, X, BookOpen, Users, UserRoundCog} from "lucide-react"
-
+import { ArrowLeftRight, X, BookOpen, Users, UserRoundCog, BellRing } from "lucide-react";
 import {
     Sidebar,
-    SidebarContent, SidebarFooter,
+    SidebarContent,
+    SidebarFooter,
     SidebarGroup,
     SidebarGroupContent,
     SidebarGroupLabel,
     SidebarMenu,
     SidebarMenuButton,
-    SidebarMenuItem, useSidebar,
-} from "@/components/ui/sidebar"
+    SidebarMenuItem,
+    useSidebar,
+} from "@/components/ui/sidebar";
 import Link from "next/link";
 
 const items = [
@@ -30,6 +31,21 @@ const items = [
         icon: BookOpen,
     },
     {
+        title: "Free lessons",
+        url: "/admin/courses",
+        icon: BookOpen,
+    },
+    {
+        title: "Quiz",
+        url: "/admin/courses",
+        icon: BookOpen,
+    },
+    {
+        title: "Ear Training",
+        url: "/admin/courses",
+        icon: BookOpen,
+    },
+    {
         title: "Subscription plans",
         url: "/admin/subscriptions",
         icon: PiNotebookDuotone,
@@ -38,11 +54,13 @@ const items = [
         title: "Transactions",
         url: "/admin/transactions",
         icon: ArrowLeftRight,
+        pushNot: 3,
     },
     {
         title: "Tutors",
         url: "/admin/tutors",
         icon: PiChalkboardTeacherLight,
+        pushNot: 3,
     },
     {
         title: "Students",
@@ -64,13 +82,25 @@ const items = [
         url: "/admin/support",
         icon: UserRoundCog,
     },
-]
+    {
+        title: "Push Notification",
+        url: "/admin/support",
+        icon: BellRing,
+    },
+];
 
 const AdminSidebar = () => {
     const { toggleSidebar } = useSidebar();
 
+    const handleMenuClick = () => {
+        // Only close the sidebar if the screen width is 768px or less
+        if (window.innerWidth <= 768) {
+            toggleSidebar();
+        }
+    };
+
     return (
-        <Sidebar >
+        <Sidebar>
             <SidebarContent className="py-4 px-8 no-scrollbar">
                 <SidebarGroup className="flex flex-col gap-16">
                     <SidebarGroupLabel className="flex flex-col gap-1 items-start">
@@ -80,20 +110,34 @@ const AdminSidebar = () => {
 
                         <Link href="/admin/component/admProfile">
                             <div className="flex gap-2 cursor-pointer">
-                                <FaUserCircle style={{width: '28px', height: '28', color: 'black'}}/>
+                                <FaUserCircle style={{ width: '28px', height: '28px', color: 'black' }} />
                                 <p className="font-medium text-xl text-black">Maradesa</p>
                             </div>
                         </Link>
-                </SidebarGroupLabel>
+                    </SidebarGroupLabel>
                     <SidebarGroupContent>
                         <SidebarMenu className="flex gap-6">
                             {items.map((item) => (
                                 <SidebarMenuItem key={item.title}>
-                                    <SidebarMenuButton asChild className="pl-8 hover:bg-[#1C1C1C0D] rounded-lg py-5">
-                                        <Link href={item.url} passHref className="flex items-center">
-                                                <item.icon
-                                                    style={{width: '16.25px', height: '16.25px', color: 'black'}}/>
+                                    <SidebarMenuButton
+                                        asChild
+                                        className="pl-8 hover:bg-[#1C1C1C0D] rounded-lg py-5 whitespace-nowrap"
+                                    >
+                                        <Link
+                                            href={item.url}
+                                            passHref
+                                            className="flex items-center"
+                                            onClick={handleMenuClick} // Close the sidebar on mobile only
+                                        >
+                                            <item.icon style={{ width: '16.25px', height: '16.25px', color: 'black' }} />
+                                            <div className="w-full flex justify-between items-center">
                                                 <span className="font-normal text-lg">{item.title}</span>
+                                                {item.pushNot && (
+                                                    <span className="px-2.5 py-1 rounded-full text-black bg-[#F8DEBD]">
+                                                        {item.pushNot}
+                                                    </span>
+                                                )}
+                                            </div>
                                         </Link>
                                     </SidebarMenuButton>
                                 </SidebarMenuItem>
@@ -107,9 +151,8 @@ const AdminSidebar = () => {
                     <Users style={{ width: '16.25px', height: '16.25px', color: 'black' }} />
                     <span className="text-[#D06B0D]">Logout</span>
                 </div>
-
             </SidebarFooter>
         </Sidebar>
-    )
-}
-export default AdminSidebar
+    );
+};
+export default AdminSidebar;

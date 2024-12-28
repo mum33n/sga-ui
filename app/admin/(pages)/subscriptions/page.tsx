@@ -7,7 +7,7 @@ const Subscription = () => {
         <section className="px-5 md">
             <h2 className="font-medium text-xl text-[#602712] mb-10">Subscription plans</h2>
             <div
-                className="flex w-[810px] gap-1 py-1.5 h-[51px] border border-[#602712] rounded-lg items-center justify-center mb-12">
+                className="flex w-full lg:w-[810px] gap-1 py-1.5 h-[51px] border border-[#602712] rounded-lg items-center justify-center mb-12">
                 <GrAnnounce size={24} strokeWidth={1} color={'#602712'}/>
                 <span className="text-[#602712] text-2xl">Promo</span>
             </div>

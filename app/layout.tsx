@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 const cabin = Cabin({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700', ], // Specify the weights you need
+  variable: '--font-cabin'
 });
 
 export default function RootLayout({
