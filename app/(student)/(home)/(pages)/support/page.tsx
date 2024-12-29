@@ -1,12 +1,12 @@
 import React from 'react'
 import object from '@/public/OBJECTS.png'
 import Image from "next/image";
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/components/ui/accordion"
+// import {
+//     Accordion,
+//     AccordionContent,
+//     AccordionItem,
+//     AccordionTrigger,
+// } from "@/components/ui/accordion"
 
 const Support = () => {
     return (
