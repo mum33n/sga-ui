@@ -10,7 +10,8 @@ export const Active = () => {
                     <TableRow className="whitespace-nowrap">
                         <TableHead className="w-[100px]">Name</TableHead>
                         <TableHead>Email address</TableHead>
-                        <TableHead>Date joined</TableHead>
+                        <TableHead>Last seen</TableHead>
+                        <TableHead>Sub.Expires</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -21,6 +22,7 @@ export const Active = () => {
                                     <TableCell className="font-medium">{list.name}</TableCell>
                                     <TableCell className="font-medium">{list.emailAddress}</TableCell>
                                     <TableCell className="font-medium">{list.dateJoined}</TableCell>
+                                    <TableCell className="font-normal text-[#1D7C1B]">{list.dateJoined}</TableCell>
                                 </TableRow>
                             )
                         ))
@@ -41,6 +43,7 @@ export const InActive = () => {
                         <TableHead className="w-[100px]">Name</TableHead>
                         <TableHead>Email address</TableHead>
                         <TableHead>Date joined</TableHead>
+                        <TableHead>Sub.Expires</TableHead>
                     </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -51,6 +54,7 @@ export const InActive = () => {
                                     <TableCell className="font-medium">{list.name}</TableCell>
                                     <TableCell className="font-medium">{list.emailAddress}</TableCell>
                                     <TableCell className="font-medium">{list.dateJoined}</TableCell>
+                                    <TableCell className="font-normal text-[#CC0427F2]">{list.dateJoined}</TableCell>
                                 </TableRow>
                             )
                         ))

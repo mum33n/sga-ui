@@ -9,15 +9,68 @@ const config: Config = {
   ],
   theme: {
   	extend: {
-		backgroundImage: {
-			'custom-image': "url('/carImage.png')",
-		},
-	  	fontFamily: {
-		  	sans: ['var(--font-cabin)', 'sans-serif'],
-	  	},
-		// backgroundImage: {
-		//   	'custom-image': "url('/carImage.png')"
-		// },
+  		backgroundImage: {
+  			'custom-image': 'url('/carImage.png')',
+  			'student-mobile': 'url('/main.png')',
+  			footerBackground: 'url('/Rectangle 52.png')',
+  			footerBackground2: 'url('/Rectangle 52 (1).png')',
+  			a: 'url('/a.png')',
+  			e: 'url('/e.png')',
+  			maskGroup: 'url('/Mask group.png')',
+  			maskGroup2: 'url('/Mask group (1).png')'
+  		},
+  		boxShadow: {
+  			custom: '0 0 8px 0 rgba(0, 0, 0, 0.2)'
+  		},
+  		fontFamily: {
+  			sans: [
+  				'var(--font-cabin)',
+  				'sans-serif'
+  			],
+  			montserrat: [
+  				'Montserrat',
+  				'sans-serif'
+  			],
+  			inter: [
+  				'Inter',
+  				'sans-serif'
+  			],
+  			poppins: [
+  				'Poppins',
+  				'sans-serif'
+  			]
+  		},
+  		animation: {
+  			marquee: 'marquee 20s linear infinite',
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
+  		},
+  		keyframes: {
+  			marquee: {
+  				'0%': {
+  					transform: 'translateX(100%)'
+  				},
+  				'100%': {
+  					transform: 'translateX(-100%)'
+  				}
+  			},
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

@@ -45,7 +45,7 @@ const ProfileForm = () => {
     });
 
     const stepTwoSchema = z.object({
-        assignmentQuestion: z.string().min(1, { message: "Assignment question is required." }),
+        assignmentQuestion: z.string().min(1, { message: "Page question is required." }),
         assignmentAudio: z
             .any()
             .refine(

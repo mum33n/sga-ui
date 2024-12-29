@@ -72,7 +72,7 @@ const AdmProfile = () => {
 
     return (
         <>
-            <section className="px-5 mb-8">
+            <section className="px-5 mb-8 md:w-[516px]">
                 <p className="text-xl font-medium text-[#602712] mb-5">Profile</p>
                 <div className="flex gap-3.5 items-center mb-8">
                     <Image
@@ -90,7 +90,7 @@ const AdmProfile = () => {
                                 onClick={() => {
                                     setActive(!active)
                                 }}
-                                className={`common-button text-sm font-medium ${active === true && "hidden"}`}>
+                                className={`common-button text-sm font-medium ${active && "hidden"}`}>
                                 Edit Profile
                             </Button>
                         </span>

@@ -1,4 +1,6 @@
-import React from "react";
+'use client';
+
+import React, {useState} from "react";
 import {transactionLineUp} from "@/app/admin/component/AdminArrays";
 
 import {
@@ -11,6 +13,12 @@ import {
 } from "@/components/ui/table"
 
 export const AllContent = () => {
+    const [currentPage, setCurrentPage] = useState(1)
+    const itemsPerPage = 5
+    const startIndex = (currentPage - 1) * itemsPerPage
+    const endIndex = startIndex + itemsPerPage
+    const paginatedTransactions = transactionLineUp.slice(startIndex, endIndex)
+
     let counter = 1
 
     return (
@@ -23,19 +31,19 @@ export const AllContent = () => {
                     <TableHead className="text-right">Date</TableHead>
                     <TableHead className="text-right">Time</TableHead>
                     <TableHead className="text-right">Transaction type</TableHead>
-                    <TableHead className="text-right">Final Result</TableHead>
+                    <TableHead className="text-right">Status</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
-                {transactionLineUp.map((invoice, index) => (
-                    <TableRow className="text-[#4F4F4F] text-[16px]" key={index}>
+                {paginatedTransactions.map((invoice, index) => (
+                    <TableRow className="text-[#4F4F4F] text-[16px] " key={index}>
                         <TableCell className="font-medium">{counter++}</TableCell>
                         <TableCell>{invoice.transactionReferences}</TableCell>
                         <TableCell>{invoice.emailAdded}</TableCell>
                         <TableCell className="text-right">{invoice.date}</TableCell>
                         <TableCell className="text-right">{invoice.time}</TableCell>
                         <TableCell className="text-right">{invoice.transactionType}</TableCell>
-                        <TableCell className="text-right">{invoice.finalResult}</TableCell>
+                        <TableCell className={`text-center w-[107px] block rounded-lg py-2 px-3 bg-white border mt-4 ${invoice.finalResult === "Received" ? "border-[#C6E8B3] text-[#579931]" : "border-[#F8DEBD] text-[#E39E47]"}`}>{invoice.finalResult}</TableCell>
                     </TableRow>
                 ))}
             </TableBody>
@@ -57,7 +65,7 @@ export const SuccessfulContent = () => {
                     <TableHead className="text-right">Date</TableHead>
                     <TableHead className="text-right">Time</TableHead>
                     <TableHead className="text-right">Transaction type</TableHead>
-                    <TableHead className="text-right">Final Result</TableHead>
+                    <TableHead className="text-right">Status</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
@@ -70,7 +78,7 @@ export const SuccessfulContent = () => {
                             <TableCell className="text-right">{invoice.date}</TableCell>
                             <TableCell className="text-right">{invoice.time}</TableCell>
                             <TableCell className="text-right">{invoice.transactionType}</TableCell>
-                            <TableCell className="text-right">{invoice.finalResult}</TableCell>
+                            <TableCell className="text-center w-[107px] block rounded-lg py-2 px-3 bg-white border mt-2 border-[#C6E8B3] text-[#579931] ">{invoice.finalResult}</TableCell>
                         </TableRow>
                     )
                 ))
@@ -93,7 +101,7 @@ export const PendingContent = () => {
                     <TableHead className="text-right">Date</TableHead>
                     <TableHead className="text-right">Time</TableHead>
                     <TableHead className="text-right">Transaction type</TableHead>
-                    <TableHead className="text-right">Final Result</TableHead>
+                    <TableHead className="text-right">Status</TableHead>
                 </TableRow>
             </TableHeader>
             <TableBody>
@@ -106,7 +114,7 @@ export const PendingContent = () => {
                             <TableCell className="text-right">{invoice.date}</TableCell>
                             <TableCell className="text-right">{invoice.time}</TableCell>
                             <TableCell className="text-right">{invoice.transactionType}</TableCell>
-                            <TableCell className="text-right">{invoice.finalResult}</TableCell>
+                            <TableCell className="text-center w-[107px] block rounded-lg py-2 px-3 bg-white border mt-2 border-[#F8DEBD] text-[#E39E47] ">{invoice.finalResult}</TableCell>
                         </TableRow>
                     )
                 ))

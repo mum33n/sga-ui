@@ -12,6 +12,7 @@ import {
     DialogTitle,
     DialogTrigger
 } from "@/components/ui/dialog";
+import {DropdownMenuDemo} from "@/app/admin/(pages)/students/components/dropdown/page";
 
 const Students = () => {
     return (
@@ -22,7 +23,7 @@ const Students = () => {
                     <Button className="py-[5px] leading-none h-fit px-2.5 border border-[#602712] text-[#602712] text-sm font-medium mb-6 bg-white">Students Status</Button>
                 </Link>
             </div>
-            <div className="relative px-5 mb-8">
+            <div className="relative px-5 mb-8 md:hidden">
                 <input
                     type="text"
                     placeholder="Search for email or name"
@@ -36,7 +37,7 @@ const Students = () => {
             </div>
             <StudentCarousel/>
             <section>
-                <Table className="mt-7">
+                <Table className="mt-7 w-[575px]">
                     <TableHeader className="text-lg text-[#602712] mt-7">
                         <TableRow className="whitespace-nowrap">
                             <TableHead className="w-[100px]">Name</TableHead>
@@ -53,6 +54,9 @@ const Students = () => {
                                             <TableCell className="font-medium">{list.name}</TableCell>
                                             <TableCell className="font-medium">{list.emailAddress}</TableCell>
                                             <TableCell className="font-medium">{list.dateJoined}</TableCell>
+                                            <TableCell className="font-medium">
+                                                <DropdownMenuDemo />
+                                            </TableCell>
                                         </TableRow>
                                     </DialogTrigger>
                                     <DialogContent className="sm:max-w-[425px] pt-[57px]  rounded-lg flex flex-col items-center">

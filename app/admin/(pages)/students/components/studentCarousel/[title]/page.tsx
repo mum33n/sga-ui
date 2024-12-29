@@ -5,14 +5,17 @@ import {studentCarouselContent, studentDashboardTable} from "@/app/admin/compone
 import {Search} from "lucide-react";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import {BackButton} from "@/app/admin/component/reuseables";
+import {DropdownMenuDemo} from "@/app/admin/(pages)/students/components/dropdown/page";
 
 
 const CarouselItemPage = () => {
     const params = useParams();
     const { title } = params; // Get the dynamic `title` segment from the URL
 
+    // console.log(params)
+
     const carouselItem = studentCarouselContent.find(
-        (item) => item.title === title
+        (item) => item.id === title
     );
     if (!carouselItem) {
         return <div>Item not found</div>; // Handle case when the item is not found
@@ -48,12 +51,15 @@ const CarouselItemPage = () => {
                     <TableBody>
                         {
                             studentDashboardTable.map((list, index) => (
-                                list.subscription === carouselItem.title && (
+                                list.subscription === carouselItem.id && (
                                     <TableRow key={index}
                                               className="whitespace-nowrap text-base font-normal text-[#4F4F4F]">
                                         <TableCell className="font-medium">{list.name}</TableCell>
                                         <TableCell className="font-medium">{list.emailAddress}</TableCell>
                                         <TableCell className="font-medium">{list.dateJoined}</TableCell>
+                                        <TableCell className="font-medium">
+                                            <DropdownMenuDemo />
+                                        </TableCell>
                                     </TableRow>
                                 )
 

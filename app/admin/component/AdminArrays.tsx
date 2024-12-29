@@ -32,6 +32,7 @@ interface categoryCoursesItem {
 interface bunchButtItem {
     title: string;
     color: string;
+    count?: number
 }
 
 export const carouselArrays: AdminCarouselItem[] = [
@@ -54,13 +55,24 @@ export const carouselArrays: AdminCarouselItem[] = [
         title: 'All tutors',
         count: 126,
         color: '#cdbbb4'
-    }
+    },
+    {
+        title: 'Free Courses',
+        count: 126,
+        color: '#F0EAE8'
+    },
+    {
+        title: 'Featured Courses',
+        count: 126,
+        color: '#DABFB6'
+    },
 ]
 
 export const bunchButtsArrays: bunchButtItem[] = [
     {
         title: 'Assignment',
-        color: '#AB8071'
+        color: '#AB8071',
+        count: 3,
     },
     {
         title: 'Questions',
@@ -68,11 +80,13 @@ export const bunchButtsArrays: bunchButtItem[] = [
     },
     {
         title: 'Support',
-        color: '#552514'
+        color: '#552514',
+        count: 3,
     },
     {
         title: 'Chat Forum',
-        color: '#3C2F2A'
+        color: '#3C2F2A',
+        count: 3,
     }
 ]
 
@@ -154,17 +168,22 @@ export const categoryCoursesBeginner: categoryCoursesItem[] = [
 export const subscriptionPlans = [
     {
         discount: 10,
-        duration: 1,
+        duration: '1 MONTH',
         price: '1,000',
     },
     {
         discount: 20,
-        duration: 3,
+        duration: '3 MONTH',
         price: '2,000',
     },
     {
         discount: 30,
-        duration: 6,
+        duration: '6 MONTH',
+        price: '3,550',
+    },
+    {
+        discount: 30,
+        duration: '1 YEAR',
         price: '3,550',
     }
 ]
@@ -210,7 +229,7 @@ export const transactionLineUp = [
         date: formattedDate,
         time: formattedTime,
         transactionType: "12 month sub plan",
-        finalResult: "Done"
+        finalResult: "Received"
     },
     {
         transactionReferences: "Approved: Adm Taiwo",
@@ -248,39 +267,98 @@ export const transactionLineUp = [
         transactionType: "12 month sub plan",
         finalResult: "Pending"
     },
+    {
+        transactionReferences: "SGA.N4.78782108",
+        emailAdded: "michelle.rivera@example.com",
+        status: "successful",
+        date: formattedDate,
+        time: formattedTime,
+        transactionType: "12 month sub plan",
+        finalResult: "Received"
+    },
+    {
+        transactionReferences: "Approved: Adm Taiwo",
+        emailAdded: "abcd@example.com",
+        status: "successful",
+        date: formattedDate,
+        time: formattedTime,
+        transactionType: "12 month sub plan",
+        finalResult: "Received"
+    },
+    {
+        transactionReferences: "SGA.N4.78782108",
+        emailAdded: "efgh@example.com",
+        status: "pending",
+        date: formattedDate,
+        time: formattedTime,
+        transactionType: "Purchased Spicy Unit",
+        finalResult: "Pending"
+    },
+    {
+        transactionReferences: "Approved: Adm Segun",
+        emailAdded: "wxyz@example.com",
+        status: "successful",
+        date: formattedDate,
+        time: formattedTime,
+        transactionType: "12 month sub plan",
+        finalResult: "Received"
+    },
+    {
+        transactionReferences: "SGA.N4.78782108-2025",
+        emailAdded: "mnop@example.com",
+        status: "pending",
+        date: formattedDate,
+        time: formattedTime,
+        transactionType: "12 month sub plan",
+        finalResult: "Pending"
+    },
+
 ]
 
 export const tutorsList = [
     {
         name: "David Moore",
         Telephone: "09087675643",
+        emailAdded: "mnop@example.com",
+        date: formattedDate,
         status: "accepted",
     },
     {
         name: "Wilson Kristen",
         Telephone: "07012394857",
+        emailAdded: "michelle.rivera@example.com",
+        date: formattedDate,
         status: "pending",
     },
     {
         name: "John Snow",
         Telephone: "08145632561",
+        emailAdded: "wxyz@example.com",
+        date: formattedDate,
         status: "accepted",
     },
     {
         name: "Little Finger",
         Telephone: "08167355663",
+        emailAdded: "wxyz@example.com",
+        date: formattedDate,
         status: "pending",
     },
     {
         name: "Musok Artola",
         Telephone: "07033448827",
+        emailAdded: "efgh@example.com",
+        date: formattedDate,
         status: "accepted",
     },
     {
         name: "Billy Graham",
         Telephone: "08198767654",
+        emailAdded: "abcd@example.com",
+        date: formattedDate,
         status: "accepted",
     },
+
 ]
 
 let AcceptedCount = 0
@@ -321,19 +399,34 @@ export const studentCarousel = [
 
 export const studentCarouselContent = [
     {
-        title: '1',
+        id: '1',
+        title: '1 MONTH',
         count: 600,
         color: '#895543'
     },
     {
-        title: '3',
+        id: '2',
+        title: '3 MONTH',
         count: 670,
         color: '#BA751B'
     },
     {
-        title: '6',
+        id: '3',
+        title: '6 MONTH',
         count: 700,
         color: '#ba401b'
+    },
+    {
+        id: '4',
+        title: '12 MONTH',
+        count: 720,
+        color: '#744911'
+    },
+    {
+        id: '5',
+        title: 'Without plan',
+        count: 230,
+        color: '#200D06'
     },
 ]
 
@@ -424,7 +517,29 @@ export const assignmentsTabContent = [
         timeSubmitted: formattedTime,
         name: "Devil foot",
         emailAddress: "michelle.rivera@example.com",
-        level: "Beginner",
+        level: "Beginners",
+        lesson: "Make Lessons Load......",
+        rating: 2,
+        title: 'Guitar Essentials for Beginners',
+        status: "reviewed"
+    },
+    {
+        dateSubmitted: formattedDate,
+        timeSubmitted: formattedTime,
+        name: "Devil foot",
+        emailAddress: "michelle.rivera@example.com",
+        level: "Beginners",
+        lesson: "Make Lessons Load......",
+        rating: 2,
+        title: 'Guitar Essentials for Beginners',
+        status: "reviewed"
+    },
+    {
+        dateSubmitted: formattedDate,
+        timeSubmitted: formattedTime,
+        name: "Devil foot",
+        emailAddress: "michelle.rivera@example.com",
+        level: "Beginners",
         lesson: "Make Lessons Load......",
         rating: 2,
         title: 'Guitar Essentials for Beginners',
@@ -457,7 +572,7 @@ export const assignmentsTabContent = [
         timeSubmitted: formattedTime,
         name: "David Moore",
         emailAddress: "mnop@example.com",
-        level: "Beginner",
+        level: "Amateur",
         lesson: "Make Lessons Load......",
         rating: 1,
         title: 'Jazz Saxophone Workshop',
@@ -490,7 +605,7 @@ export const assignmentsTabContent = [
         timeSubmitted: formattedTime,
         name: "Musok Artola",
         emailAddress: "musok@example.com",
-        level: "Beginner",
+        level: "Beginners",
         lesson: "Make Lessons Load......",
         rating: 4,
         title: 'Jazz Saxophone Workshop',
@@ -503,37 +618,37 @@ export const supportTabContent = [
     {
         dateSubmitted: formattedDate,
         emailAddress: "michelle.rivera@example.com",
-        status: "resolved"
+        status: "Resolved"
     },
     {
         dateSubmitted: formattedDate,
         emailAddress: "abcd@example.com",
-        status: "unresolved",
+        status: "Unresolved",
     },
     {
         dateSubmitted: formattedDate,
         emailAddress: "efgh@example.com",
-        status: "resolved",
+        status: "Resolved",
     },
     {
         dateSubmitted: formattedDate,
         emailAddress: "mnop@example.com",
-        status: "resolved",
+        status: "Resolved",
     },
     {
         dateSubmitted: formattedDate,
         emailAddress: "wxyz@example.com",
-        status: "resolved",
+        status: "Resolved",
     },
     {
         dateSubmitted: formattedDate,
         emailAddress: "mesh@example.com",
-        status: "unresolved",
+        status: "Unresolved",
     },
     {
         dateSubmitted: formattedDate,
         emailAddress: "musok@example.com",
-        status: "resolved",
+        status: "Resolved",
     },
 ]
 

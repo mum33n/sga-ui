@@ -14,7 +14,7 @@ export const BackButton = () => {
 
     return (
         <button
-            className="text-base text-[#602712] cursor-pointer px-5 mb-8"
+            className="w-fit text-start text-base text-[#602712] cursor-pointer pr-5 mb-8"
             onClick={handleBack}>
             Back
         </button>

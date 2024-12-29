@@ -12,7 +12,7 @@ export const AdminNavsContents = () => {
                 <span>Category</span>
                 <span>Courses</span>
             </div>
-            <div className="mt-4">
+            <div className="mt-4 w-[855px]">
                 {categoryCoursesArray.map((course, index: number) => (
                     <div key={index} style={{backgroundColor: course.color}}
                          className={`w-full h-24 flex  px-4 justify-between items-center`}>
