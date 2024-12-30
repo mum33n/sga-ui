@@ -64,7 +64,7 @@ const guitarChalllenge = [
 const Dashboard = () => {
     return (
         <>
-            <section className="bg-[#FFF8F0] overflow-x-hidden">
+            <section className="{/*bg-[#FFF8F0]*/} overflow-x-hidden">
                 <section className="pt-9 pl-[59px] pr-[49px]">
                     {
                         userInfo.map((user) => (

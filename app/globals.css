@@ -4,6 +4,7 @@
 
 body {
   /*font-family: var(--font-cabin), sans-serif;*/
+  /*background-color: red;*/
 }
 
 @layer utilities {
@@ -98,23 +99,23 @@ body {
   background-color: #602712;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
-}
-@layer utilities {
-  .bg-background {
-    background-color: hsl(var(--background));
-  }
-  .text-foreground {
-    color: hsl(var(--foreground));
-  }
-  .border-border {
-    border-color: hsl(var(--border));
-  }
-}
+/*@layer base {*/
+/*  * {*/
+/*    @apply border-border;*/
+/*  }*/
+/*  body {*/
+/*    @apply bg-background text-foreground;*/
+/*  }*/
+/*}*/
+/*@layer utilities {*/
+/*  .bg-background {*/
+/*    background-color: hsl(var(--background));*/
+/*  }*/
+/*  .text-foreground {*/
+/*    color: hsl(var(--foreground));*/
+/*  }*/
+/*  .border-border {*/
+/*    border-color: hsl(var(--border));*/
+/*  }*/
+/*}*/
 

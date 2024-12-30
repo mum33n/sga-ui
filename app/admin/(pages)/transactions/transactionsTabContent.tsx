@@ -1,8 +1,5 @@
 'use client';
-
 import React from "react";
-import {transactionLineUp} from "@/app/admin/component/AdminArrays";
-
 import {
     Table,
     TableBody,
@@ -11,6 +8,114 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+
+const now = new Date();
+const formattedTime = new Intl.DateTimeFormat("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+}).format(now);
+
+const formattedDate = new Intl.DateTimeFormat("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "2-digit",
+}).format(now);
+
+export const transactionLineUp = [
+    {
+        transactionReferences: "SGA.N4.78782108",
+        emailAdded: "michelle.rivera@example.com",
+        status: "successful",
+        date: formattedDate,
+        time: formattedTime,
+        transactionType: "12 month sub plan",
+        finalResult: "Received"
+    },
+    {
+        transactionReferences: "Approved: Adm Taiwo",
+        emailAdded: "abcd@example.com",
+        status: "successful",
+        date: formattedDate,
+        time: formattedTime,
+        transactionType: "12 month sub plan",
+        finalResult: "Received"
+    },
+    {
+        transactionReferences: "SGA.N4.78782108",
+        emailAdded: "efgh@example.com",
+        status: "pending",
+        date: formattedDate,
+        time: formattedTime,
+        transactionType: "Purchased Spicy Unit",
+        finalResult: "Pending"
+    },
+    {
+        transactionReferences: "Approved: Adm Segun",
+        emailAdded: "wxyz@example.com",
+        status: "successful",
+        date: formattedDate,
+        time: formattedTime,
+        transactionType: "12 month sub plan",
+        finalResult: "Received"
+    },
+    {
+        transactionReferences: "SGA.N4.78782108-2025",
+        emailAdded: "mnop@example.com",
+        status: "pending",
+        date: formattedDate,
+        time: formattedTime,
+        transactionType: "12 month sub plan",
+        finalResult: "Pending"
+    },
+    {
+        transactionReferences: "SGA.N4.78782108",
+        emailAdded: "michelle.rivera@example.com",
+        status: "successful",
+        date: formattedDate,
+        time: formattedTime,
+        transactionType: "12 month sub plan",
+        finalResult: "Received"
+    },
+    {
+        transactionReferences: "Approved: Adm Taiwo",
+        emailAdded: "abcd@example.com",
+        status: "successful",
+        date: formattedDate,
+        time: formattedTime,
+        transactionType: "12 month sub plan",
+        finalResult: "Received"
+    },
+    {
+        transactionReferences: "SGA.N4.78782108",
+        emailAdded: "efgh@example.com",
+        status: "pending",
+        date: formattedDate,
+        time: formattedTime,
+        transactionType: "Purchased Spicy Unit",
+        finalResult: "Pending"
+    },
+    {
+        transactionReferences: "Approved: Adm Segun",
+        emailAdded: "wxyz@example.com",
+        status: "successful",
+        date: formattedDate,
+        time: formattedTime,
+        transactionType: "12 month sub plan",
+        finalResult: "Received"
+    },
+    {
+        transactionReferences: "SGA.N4.78782108-2025",
+        emailAdded: "mnop@example.com",
+        status: "pending",
+        date: formattedDate,
+        time: formattedTime,
+        transactionType: "12 month sub plan",
+        finalResult: "Pending"
+    },
+
+]
+
 
 export const AllContent = () => {
     const currentPage = 1

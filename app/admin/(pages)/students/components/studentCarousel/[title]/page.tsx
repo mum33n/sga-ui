@@ -5,7 +5,7 @@ import {studentCarouselContent, studentDashboardTable} from "@/app/admin/compone
 import {Search} from "lucide-react";
 import {Table, TableBody, TableCell, TableHead, TableHeader, TableRow} from "@/components/ui/table";
 import {BackButton} from "@/app/admin/component/reuseables";
-import {DropdownMenuDemo} from "@/app/admin/(pages)/students/components/dropdown/page";
+import {DropdownMenuDemo} from "@/app/admin/(pages)/students/components/dropdown-menu";
 
 
 const CarouselItemPage = () => {
