@@ -1,11 +1,6 @@
 import React, {useState} from 'react'
 import {X} from "lucide-react";
 import Link from "next/link";
-import {courses} from "@/app/(student)/(home)/(pages)/buy-course/components/Arrays";
-import {useParams} from "next/navigation";
-
-// const allLessons = courses
-//     .flatMap(course => course.id);
 
 const courseContentSidebar = [
     {

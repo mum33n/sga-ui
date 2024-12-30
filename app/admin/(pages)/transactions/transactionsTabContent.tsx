@@ -1,6 +1,6 @@
 'use client';
 
-import React, {useState} from "react";
+import React from "react";
 import {transactionLineUp} from "@/app/admin/component/AdminArrays";
 
 import {
@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/table"
 
 export const AllContent = () => {
-    const [currentPage, setCurrentPage] = useState(1)
+    const currentPage = 1
     const itemsPerPage = 5
     const startIndex = (currentPage - 1) * itemsPerPage
     const endIndex = startIndex + itemsPerPage
