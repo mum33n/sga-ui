@@ -1,18 +1,18 @@
 'use client';
+
 import React from "react";
-import FreeCourseRightSideBar from "@/app/(student)/(home)/(pages)/free-course/[freeCourseId]/components/FreeCourseRightSideBar";
+import FreeCourseRightSideBar from "../../../components/FreeCourseRightSideBar";
 
-type FreeCourseLayoutProps = {
+
+interface FreeCourseLayoutProps {
     children: React.ReactNode;
-    active?: boolean;
-    setActive?: (active: boolean) => void;
-};
+}
 
-const FreeCourseLayout = ({ children, active, setActive }: FreeCourseLayoutProps) => {
+const FreeCourseLayout = ({ children }: FreeCourseLayoutProps) => {
     return (
         <section className="flex bg-[#FFF8F0]">
             {children}
-            <FreeCourseRightSideBar active={active} setActive={setActive} />
+            <FreeCourseRightSideBar />
         </section>
     );
 };

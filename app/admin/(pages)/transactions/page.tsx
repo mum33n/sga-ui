@@ -5,7 +5,7 @@ import {subscriptionTabs} from "@/app/admin/component/AdminArrays";
 import {PaginationDemo} from "@/app/admin/component/Pagination";
 
 const Transactions = () => {
-    const [currentPage, setCurrentPage] = useState(1)
+    const currentPage = useState(1)
 
     return (
         <section>

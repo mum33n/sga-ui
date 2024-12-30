@@ -12,7 +12,7 @@ import {
     DialogTitle,
     DialogTrigger
 } from "@/components/ui/dialog";
-import {DropdownMenuDemo} from "@/app/admin/(pages)/students/components/dropdown/page";
+import {DropdownMenuDemo} from "@/app/admin/(pages)/students/components/dropdown-menu";
 
 const Students = () => {
     return (

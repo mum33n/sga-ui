@@ -59,7 +59,7 @@ const CoursePreviewPage = () => {
                 <div className="mb-4 mt-6 flex w-full justify-between items-center">
                     <h1 className="text-[40px] text-[#602712] font-bold">{lesson.title}</h1>
                     <div className="lg:hidden">
-                        <FreeCourseLayout active={active} setActive={setActive}>
+                        <FreeCourseLayout>
                             <div onClick={() => {
                                 setActive(!active)
                                 console.log("clicked")

@@ -1,8 +1,8 @@
 "use client";
 
-import * as React from "react"
-import Link from "next/link"
-import { cn } from "@/lib/utils"
+import * as React from "react";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 import {
     NavigationMenu,
     NavigationMenuContent,
@@ -10,9 +10,8 @@ import {
     NavigationMenuLink,
     NavigationMenuList,
     NavigationMenuTrigger,
-    // navigationMenuTriggerStyle,
-} from "@/components/ui/navigation-menu"
-import {Button} from "@/components/ui/button";
+} from "@/components/ui/navigation-menu";
+import { Button } from "@/components/ui/button";
 import {
     BookMinus,
     Calendar,
@@ -22,10 +21,10 @@ import {
     Gift,
     Guitar,
     HandCoins,
-    X
+    X,
 } from "lucide-react";
-import {IoChatbubblesOutline} from "react-icons/io5";
-import {HiOutlineUserGroup} from "react-icons/hi";
+import { IoChatbubblesOutline } from "react-icons/io5";
+import { HiOutlineUserGroup } from "react-icons/hi";
 
 const communityComp = [
     {
@@ -38,15 +37,13 @@ const communityComp = [
     {
         title: "Event Calendar",
         href: "#",
-        description:
-            "Buy and sell guitars and accessories all at your fingertips",
+        description: "Stay updated with the latest events and gatherings.",
         icon: <Calendar strokeWidth={1.5} size={18} />,
     },
     {
         title: "Spicy Market Place",
         href: "#",
-        description:
-            "Buy and sell guitars and accessories all at your fingertips",
+        description: "Buy and sell guitars and accessories all at your fingertips",
         icon: <FolderClosed strokeWidth={1.5} size={18} />,
     },
     {
@@ -55,79 +52,71 @@ const communityComp = [
         description: "Your all-access pass to mastering the guitar",
         icon: <HiOutlineUserGroup strokeWidth={1.5} />,
     },
-]
+];
 
 const aboutComp = [
     {
         title: "Gallery",
         href: "#",
-        description:
-            "View amazing moments of Spicy guitar academy pictures.",
+        description: "View amazing moments of Spicy guitar academy pictures.",
         icon: <GalleryVerticalEnd size={18} color={"#602712"} />,
     },
     {
         title: "Giveaway",
         href: "#",
         description:
-            "Join other guitarist to win branded Spicy T-shirt and guitar accessories.",
+            "Join other guitarists to win branded Spicy T-shirts and guitar accessories.",
         icon: <HandCoins strokeWidth={1.5} size={18} color={"#602712"} />,
     },
     {
         title: "Charity Events",
         href: "#",
         description:
-            "Contribute to the support music educations and other musicians in need or gears.",
+            "Contribute to support music education and other musicians in need.",
         icon: <Gift strokeWidth={1.5} size={18} color={"#602712"} />,
     },
-]
+];
 
 const exploreComp = {
     exploreLeft: [
-        {
-            title: "Beginners Course",
-            link: "#"
-        },
-        {
-            title: "Intermediate Course",
-            link: "#"
-        },
-        {
-            title: "Advance Course",
-            link: "#"
-        },
-        {
-            title: "Buy Course",
-            link: "#"
-        },
+        { title: "Beginners Course", link: "#" },
+        { title: "Intermediate Course", link: "#" },
+        { title: "Advanced Course", link: "#" },
+        { title: "Buy Course", link: "#" },
     ],
-
     exploreRight: [
         {
             title: "Practice Loops",
             icon: <CirclePlay color="#E89222" />,
-            link: "#"
+            link: "#",
         },
         {
             title: "Guitar Techniques",
             icon: <Guitar color={"#E89222"} size={32} strokeWidth={1.5} />,
-            link: "#"
+            link: "#",
         },
         {
-            title: "Spicy Guitar HandBook",
+            title: "Spicy Guitar Handbook",
             icon: <BookMinus color="#E89222" />,
-            link: "#"
+            link: "#",
         },
-    ]
-}
+    ],
+};
 
-export function SideBar({active, setActive}) {
+export function SideBar({ active, setActive }: { active: boolean; setActive: React.Dispatch<React.SetStateAction<boolean>> }) {
     return (
-        <section className={`${!active && "hidden"} ${active && "w-screen h-screen flex absolute top-0 bottom-0 left-0 right-0"} bg-amber-600 p-5 flex-col gap-16`}>
+        <section
+            className={`${!active && "hidden"} ${
+                active && "w-screen h-screen flex absolute top-0 left-0"
+            } bg-amber-600 p-5 flex-col gap-16`}
+        >
             <X onClick={() => setActive(!active)} />
             <NavigationMenu className="block md:hidden">
                 <NavigationMenuList className="flex flex-col">
                     <NavigationMenuItem>
-                        <NavigationMenuTrigger className="font-semibold bg-[#602712] text-white text-lg">Explore</NavigationMenuTrigger>
+                        <NavigationMenuTrigger className="font-semibold bg-[#602712] text-white text-lg">
+                            Explore
+                        </NavigationMenuTrigger>
                         <NavigationMenuContent>
                             <ul className="grid gap-[124px] p-4 lg:pr-[120px] h-[388px] lg:grid-cols-[.75fr_1fr]">
                                 <li className="row-span-3">
@@ -135,43 +124,51 @@ export function SideBar({active, setActive}) {
                                         LEARNING SYSTEM
                                     </div>
                                     <div className="flex flex-col">
-                                        {
-                                            exploreComp.exploreLeft.map((item, index) => (
-                                                <Link key={index} href={item.link}>
-                                                    <div key={index}
-                                                         className="border-b border-b-gray-200 pb-3.5 pt-1.5 font-medium text-lg text-[#2B1108] cursor-pointer">
-                                                        {item.title}
-                                                    </div>
-                                                </Link>
-
-                                            ))
-                                        }
-                                    </div>
-                                    <Button className="px-8 py-4 w-[241px] h-14 mt-8 common-button rounded-xl">Free Lessons</Button>
-                                </li>
-
-                                <div>
-                                    <div className="mb-7 mt-4 text-lg font-semibold text-[#2B1108]">TUTORIAL LIBRARY</div>
-                                    {
-                                        exploreComp.exploreRight.map((item, index) => (
-                                            <ListItem key={index} href={item.link} title="" className="flex items-center border-0">
-                                                <div className="flex">
-                                                    <span className="w-10">{item.icon}</span>
-                                                    <span className="font-medium text-lg text-[#2B1108] whitespace-nowrap">{item.title}</span>
+                                        {exploreComp.exploreLeft.map((item, index) => (
+                                            <Link key={index} href={item.link}>
+                                                <div
+                                                    key={index}
+                                                    className="border-b border-b-gray-200 pb-3.5 pt-1.5 font-medium text-lg text-[#2B1108] cursor-pointer"
+                                                >
+                                                    {item.title}
                                                 </div>
-                                            </ListItem>
-                                        ))
-                                    }
+                                            </Link>
+                                        ))}
+                                    </div>
+                                    <Button className="px-8 py-4 w-[241px] h-14 mt-8 common-button rounded-xl">
+                                        Free Lessons
+                                    </Button>
+                                </li>
+                                <div>
+                                    <div className="mb-7 mt-4 text-lg font-semibold text-[#2B1108]">
+                                        TUTORIAL LIBRARY
+                                    </div>
+                                    {exploreComp.exploreRight.map((item, index) => (
+                                        <ListItem
+                                            key={index}
+                                            href={item.link}
+                                            title=""
+                                            className="flex items-center border-0"
+                                        >
+                                            <div className="flex">
+                                                <span className="w-10">{item.icon}</span>
+                                                <span className="font-medium text-lg text-[#2B1108] whitespace-nowrap">
+                          {item.title}
+                        </span>
+                                            </div>
+                                        </ListItem>
+                                    ))}
                                 </div>
-
                             </ul>
                         </NavigationMenuContent>
                     </NavigationMenuItem>
 
                     <NavigationMenuItem>
-                        <NavigationMenuTrigger className="font-semibold bg-[#602712] text-white text-lg">Community</NavigationMenuTrigger>
+                        <NavigationMenuTrigger className="font-semibold bg-[#602712] text-white text-lg">
+                            Community
+                        </NavigationMenuTrigger>
                         <NavigationMenuContent>
-                            <ul className="flex flex-col w-[400px] gap-6 pr-[137px] p-4 md:w-[500px] lg:w-[700px] ">
+                            <ul className="flex flex-col w-[400px] gap-6 pr-[137px] p-4 md:w-[500px] lg:w-[700px]">
                                 {communityComp.map((component) => (
                                     <ListItem
                                         key={component.title}
@@ -187,9 +184,11 @@ export function SideBar({active, setActive}) {
                     </NavigationMenuItem>
 
                     <NavigationMenuItem>
-                        <NavigationMenuTrigger className="font-semibold bg-[#602712] text-white text-lg">About</NavigationMenuTrigger>
+                        <NavigationMenuTrigger className="font-semibold bg-[#602712] text-white text-lg">
+                            About
+                        </NavigationMenuTrigger>
                         <NavigationMenuContent>
-                            <ul className="flex flex-col w-[400px] gap-6 pr-[137px] p-4 md:w-[500px] lg:w-[700px] ">
+                            <ul className="flex flex-col w-[400px] gap-6 pr-[137px] p-4 md:w-[500px] lg:w-[700px]">
                                 {aboutComp.map((component) => (
                                     <ListItem
                                         key={component.title}
@@ -203,17 +202,15 @@ export function SideBar({active, setActive}) {
                             </ul>
                         </NavigationMenuContent>
                     </NavigationMenuItem>
-
                 </NavigationMenuList>
             </NavigationMenu>
         </section>
-
-    )
+    );
 }
 
 const ListItem = React.forwardRef<
     React.ElementRef<"a">,
-    React.ComponentPropsWithoutRef<"a">
+    React.ComponentPropsWithoutRef<"a"> & { icon?: React.ReactNode; title: string }
 >(({ className, title, icon, children, ...props }, ref) => {
     return (
         <li>
@@ -228,7 +225,9 @@ const ListItem = React.forwardRef<
                 >
                     <div className="flex items-center gap-1">
                         <div>{icon}</div>
-                        <div className="text-lg font-semibold text-[#2B1108] leading-none">{title}</div>
+                        <div className="text-lg font-semibold text-[#2B1108] leading-none">
+                            {title}
+                        </div>
                     </div>
                     <p className="line-clamp-2 text-sm font-medium leading-snug text-muted-foreground text-[#2B1108] whitespace-nowrap">
                         {children}
@@ -236,6 +235,6 @@ const ListItem = React.forwardRef<
                 </a>
             </NavigationMenuLink>
         </li>
-    )
-})
-ListItem.displayName = "ListItem"
+    );
+});
+ListItem.displayName = "ListItem";

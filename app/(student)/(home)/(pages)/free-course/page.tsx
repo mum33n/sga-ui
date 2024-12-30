@@ -2,7 +2,7 @@ import React from 'react'
 import {courses} from "@/app/(student)/(home)/(pages)/buy-course/components/Arrays";
 import Link from "next/link";
 import Image from "next/image";
-import {Clock3, TvMinimalPlay} from "lucide-react";
+import { TvMinimalPlay} from "lucide-react";
 
 const FreeCourse = () => {
     return (
